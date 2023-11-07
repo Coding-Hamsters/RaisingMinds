@@ -1,3 +1,4 @@
+{% load static %}
 <!DOCTYPE html>
 <html lang="en">
     <head>
@@ -14,7 +15,7 @@
         <!-- <link href="./img/favicon.png" rel="icon"> -->
 
         <!-- CSS -->
-        <link rel="stylesheet" type="text/css" href=""/>
+        <link rel="stylesheet" type="text/css" href="{% static 'app/css/index.css' %}"/>
 
         
     </head>
@@ -36,7 +37,7 @@
             <!-- Nav -->
             <div class="navbar-nav mx-lg-auto">
                 <a class="nav-item nav-link active" href="{% url 'index' %}" aria-current="page">Home</a>
-                <a class="nav-item nav-link" href="{% url 'campaign' %}">Campaigns</a>
+                <a class="nav-item nav-link" href="#">Campaigns</a>
                 <a class="nav-item nav-link" href="#">Features</a>
                 <a class="nav-item nav-link" href="#">Get invloved</a>
             </div>
