@@ -1,0 +1,135 @@
+/* @import url('https://fonts.googleapis.com/css?family=Poppins'); */
+body{
+    /* font-family: Poppins; */
+    background-color: #f3f5f8;
+}
+
+.logo {
+    display: flex;
+    font-size: 20px;
+    font-weight: 500;
+    color: #f3f5f8;
+    letter-spacing: 2px;
+    cursor: pointer;
+    text-transform: uppercase;
+}
+
+a {
+    text-decoration: none;
+}
+
+.ftco-section {
+    padding: 2.5em 0; 
+}
+
+.container {
+    width: 100%;
+    padding-right: 15px;
+    padding-left: 15px;
+    margin-right: auto;
+    margin-left: auto; }
+    
+    @media (min-width: 576px) {
+      .container 
+      {max-width: 540px;
+         }
+     }
+    @media (min-width: 768px) {
+      .container {
+        max-width: 720px; } 
+    }
+    @media (min-width: 992px) {
+      .container {
+        max-width: 960px; } 
+    }
+    @media (min-width: 1200px) {
+      .container {
+        max-width: 1340px; }
+        .login-wrap{
+            max-width: 80%;
+            margin-left: 80px;    
+
+        } 
+}
+
+.container-fluid {
+    width: 100%;
+    padding-right: 15px;
+    padding-left: 15px;
+    margin-right: auto;
+    margin-left: auto; 
+}
+
+.login-wrap {
+    position: relative;
+    background: #f3f5f8;
+    border-radius: 10px;
+    -webkit-box-shadow: 0px 10px 34px -15px rgba(0, 0, 0, 0.24);
+    -moz-box-shadow: 0px 10px 34px -15px rgba(0, 0, 0, 0.24);
+    box-shadow: 0px 10px 34px -15px rgba(0, 0, 0, 0.24); 
+}
+
+.login-wrap h3 {
+    font-weight: 300; 
+}
+
+.login-wrap .icon {
+    width: 80px;
+    height: 80px;
+    background: #007bff;
+    border-radius: 50%;
+    font-size: 30px;
+    margin: 0 auto;
+    margin-bottom: 10px; 
+}
+
+.login-wrap .icon span {
+    color: #f3f5f8; 
+}
+
+.form-group {
+    margin-bottom: 1rem; 
+}
+
+.form-inline .form-group {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-flex: 0;
+    -ms-flex: 0 0 auto;
+    flex: 0 0 auto;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+    -ms-flex-flow: row wrap;
+    flex-flow: row wrap;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    margin-bottom: 0; 
+}
+
+.rember {
+    display: flex;
+}
+
+.rounded-left {
+    border-top-left-radius: 0.25rem !important;
+    border-bottom-left-radius: 0.25rem !important; 
+}
+
+.btn-blue {
+    background-color: #007bff;
+    color: white;
+    border: #007bff;
+}
+
+  .btn-blue:hover {
+    background-color: #007bff !important;
+    color: white;
+}
+.login-with-google {
+    font-family:poppins; 
+}
+button i {
+    margin-right: 30px; 
+}
