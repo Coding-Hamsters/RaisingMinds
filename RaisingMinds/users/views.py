@@ -2,6 +2,7 @@ from django.shortcuts import render,redirect
 from django.http import HttpResponse
 from .models import User
 from django.contrib.auth import login as user_login,logout,authenticate
+from user_profile.models import Profile
 
 from django.contrib.sites.shortcuts import get_current_site
 from django.template.loader import render_to_string
@@ -30,6 +31,11 @@ def signup(request):
                 newUser = User.objects.create_user(email,username,password1)
                 newUser.is_active = False
                 newUser.save()
+
+                # create user profile
+                user_model = User.objects.get(email = email)
+                new_profile = Profile.objects.create(user = user_model)
+                new_profile.save()
 
                 # set up email comfimation to signup
                 current_site = get_current_site(request)
