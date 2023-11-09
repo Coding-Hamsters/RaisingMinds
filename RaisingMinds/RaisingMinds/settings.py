@@ -131,3 +131,10 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 # mention that what is the auth user model
 AUTH_USER_MODEL = 'users.User'
+
+# email settings
+EMAIL_USE_TLS = True  
+EMAIL_HOST = 'smtp.gmail.com'  
+EMAIL_HOST_USER = 'raisingmindsfoundation@gmail.com'  
+EMAIL_HOST_PASSWORD = 'hslg eumv naye mmvr'  
+EMAIL_PORT = 587 
