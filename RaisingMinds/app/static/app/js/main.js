@@ -20,3 +20,5 @@ function updateCountsOnScroll() {
     }
   });
 }
+
+window.addEventListener('scroll', updateCountsOnScroll);
