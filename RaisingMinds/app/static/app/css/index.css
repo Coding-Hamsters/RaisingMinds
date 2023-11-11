@@ -1,6 +1,10 @@
 /*--------------------------------------------------------------
 # General
 --------------------------------------------------------------*/
+html{
+  scroll-behavior: smooth;
+}
+
 .logo {
     display: flex;
     font-size: 20px;
@@ -10,6 +14,14 @@
     cursor: pointer;
     text-transform: uppercase;
     text-decoration: none;
+}
+
+.navbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 100; 
 }
 
 a {
@@ -26,7 +38,7 @@ a:hover {
 --------------------------------------------------------------*/
   #hero {
     width: 100%;
-    height: 90vh;
+    height: 100vh;
     background: url(/static/app/images/hero-bg.jpg) top left;
     background-size: cover;
     position: relative;
@@ -85,7 +97,7 @@ a:hover {
   #hero .btn-get-started:hover {
     background: #247cf0;
   }
-  
+
   #hero .btn-watch-video {
     font-size: 16px;
     transition: 0.5s;
@@ -108,7 +120,7 @@ a:hover {
     line-height: 0;
     margin-right: 8px;
   }
-  
+
   #hero .btn-watch-video:hover {
     color: #106eea;
   }
@@ -156,6 +168,7 @@ a:hover {
 --------------------------------------------------------------*/
   #section-02 {
     height: 60vh;
+    overflow: hidden;
   }
 
   #section-02 .icon-boxes {
@@ -201,7 +214,7 @@ a:hover {
   }
   
   #section-02 .icon-box:hover {
-    transform: scale(1.08);
+    transform: scale(1.04);
   }
   
   #section-02 .icon-box:hover .title a {
