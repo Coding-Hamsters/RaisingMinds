@@ -72,7 +72,7 @@ def login(request):
 
         if user is not None:
             user_login(request,user)
-            return redirect('home')
+            return redirect('index')
         
         else:
             return HttpResponse('<h1>Username or Password is invalid</h1>')
