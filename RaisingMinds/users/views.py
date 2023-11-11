@@ -1,7 +1,7 @@
 from django.shortcuts import render,redirect
 from django.http import HttpResponse
 from .models import User
-from django.contrib.auth import login as user_login,logout,authenticate
+from django.contrib.auth import login as user_login,logout as user_logout,authenticate
 from user_profile.models import Profile
 
 from django.contrib.sites.shortcuts import get_current_site
@@ -79,8 +79,9 @@ def login(request):
 
     return render(request,'users/login.html')
 
-# def logout(request):
-#     pass
+def logout(request):
+    user_logout(request)
+    return redirect('index')
 
 # active the user after confirm the comfirmation mail
 def activate(request,uidb64,token):

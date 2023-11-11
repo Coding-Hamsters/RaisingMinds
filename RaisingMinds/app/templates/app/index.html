@@ -64,6 +64,7 @@
                 <h1>Welcome to <span>Raising Minds </span></h1>
                 <h2>Join us in building a brighter future through your generous donations.</h2>
                 {% if user.is_authenticated %}
+                  <a href="{% url 'logout' %}" class="btn-get-started">Logout</a> &nbsp;&nbsp;&nbsp;
                 {% else %}
                 <div class="d-flex">
                   <a href="{% url 'login' %}" class="btn-get-started">Sign in</a> &nbsp;&nbsp;&nbsp;

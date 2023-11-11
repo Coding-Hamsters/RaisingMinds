@@ -25,6 +25,7 @@ urlpatterns = [
     path('',include('app.urls')),
     path('signup/',user_views.signup,name='signup'),
     path('login/',user_views.login,name='login'),
-    path('activate/<uidb64>/<token>',user_views.activate,name='activate')
+    path('activate/<uidb64>/<token>',user_views.activate,name='activate'),
+    path('logout/',user_views.logout,name='logout')
 
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
