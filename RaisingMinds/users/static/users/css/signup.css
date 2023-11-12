@@ -30,20 +30,20 @@ a {
     margin-left: auto; }
     
     @media (min-width: 576px) {
-      .container 
+        .signupForm 
       {max-width: 540px;
          }
      }
     @media (min-width: 768px) {
-      .container {
+        .signupForm  {
         max-width: 720px; } 
     }
     @media (min-width: 992px) {
-      .container {
+        .signupForm  {
         max-width: 960px; } 
     }
     @media (min-width: 1200px) {
-      .container {
+        .signupForm  {
         max-width: 1340px; }
         .login-wrap{
             max-width: 80%;
@@ -51,7 +51,6 @@ a {
            
         } 
 }
-
 .container-fluid {
     width: 100%;
     padding-right: 15px;

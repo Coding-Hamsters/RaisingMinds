@@ -22,7 +22,7 @@ a {
     padding: 2.5em 0; 
 }
 
-.container {
+.loginForm  {
     width: 100%;
     padding-right: 15px;
     padding-left: 15px;
@@ -30,20 +30,20 @@ a {
     margin-left: auto; }
     
     @media (min-width: 576px) {
-      .container 
+        .loginForm  
       {max-width: 540px;
          }
      }
     @media (min-width: 768px) {
-      .container {
+        .loginForm  {
         max-width: 720px; } 
     }
     @media (min-width: 992px) {
-      .container {
+        .loginForm  {
         max-width: 960px; } 
     }
     @media (min-width: 1200px) {
-      .container {
+        .loginForm  {
         max-width: 1340px; }
         .login-wrap{
             max-width: 80%;
