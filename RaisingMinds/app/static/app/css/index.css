@@ -590,13 +590,6 @@ section {
   margin: 0;
 }
 
-#footer .footer-top .footer-links ul i {
-  padding-right: 2px;
-  color: #2487ce;
-  font-size: 18px;
-  line-height: 1;
-}
-
 #footer .footer-top .footer-links ul li {
   padding: 10px 0;
   display: flex;
