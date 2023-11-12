@@ -12,6 +12,8 @@ from .token import generate_token
 from django.core.mail import EmailMessage
 from django.conf import settings
 from django.contrib import messages
+from .helpers import send_forget_password_mail
+import uuid
 
 # Create your views here.
 def signup(request):
@@ -101,3 +103,59 @@ def activate(request,uidb64,token):
         return redirect('login')
     else:
         return HttpResponse('<h1>Activation Fail!</h1>')
+    
+    # change the password 
+def ChangePassword(request,token):
+    context = {}
+    try:
+        
+        profile_obj = Profile.objects.filter(forget_password_token = token).first()
+        context = {'user_id' : profile_obj.user.id}
+        
+        if request.method == 'POST':
+            new_password = request.POST.get('new_password')
+            confirm_password = request.POST.get('reconfirm_password')
+            user_id = request.POST.get('user_id')
+            
+            if user_id is  None:
+                messages.success(request, 'No user id found.')
+                return redirect(f'/change-password/{token}/')
+                
+            
+            if  new_password != confirm_password:
+                messages.success(request, 'both should  be equal.')
+                return redirect(f'/change-password/{token}/')
+                         
+            
+            user_obj = User.objects.get(id = user_id)
+            user_obj.set_password(new_password)
+            user_obj.save()
+            return redirect('login')
+        
+    except Exception as e:
+        print(e)
+    return render(request,'users/change-password.html',context)
+
+def ForgetPassword(request):
+    try:
+        if request.method == 'POST':
+            email = request.POST.get('email')
+            
+            if not User.objects.filter(email = email).first():
+                messages.success(request, 'Not user found with this email.')
+                return HttpResponse('<h1>Sent You a mail to reset password</h1>')
+            
+            user_obj = User.objects.get(email = email)
+            token = str(uuid.uuid4())
+            profile_obj= Profile.objects.get(user = user_obj)
+            profile_obj.forget_password_token = token
+            profile_obj.save()
+            send_forget_password_mail(user_obj.email , token)
+            messages.success(request, 'An email is sent.')
+            return redirect('forget_password')
+                
+    
+    
+    except Exception as e:
+        print(e)
+    return render(request , 'users/forget-password.html')
