@@ -38,11 +38,11 @@
             <!-- Nav -->
             <div class="navbar-nav mx-lg-auto">
                 <a class="nav-item nav-link active" href="{% url 'index' %}" aria-current="page">Home</a>
-                <a class="nav-item nav-link" href="#">About</a>
+                <a class="nav-item nav-link" href="#about">About</a>
                 <a class="nav-item nav-link" href="{% url 'projects' %}">Projects</a>
                 <!-- <a class="nav-item nav-link" href="#">Features</a> -->
-                <a class="nav-item nav-link" href="#">Team</a>
-                <a class="nav-item nav-link" href="#">Contact</a>
+                <a class="nav-item nav-link" href="#team">Team</a>
+                <a class="nav-item nav-link" href="#contact">Contact</a>
                 {% if user.is_authenticated %}
                 <a class="nav-item nav-link" href="#">Community</a>
                 {% else %}
@@ -171,7 +171,7 @@
         </section><!-- End Counts Section -->
 
         <!-- Ongoing Projects Section -->
-        <section class="projects" id="ongoing" class="projects section-bg">
+        <section class="projects" id="ongoing"  class="projects section-bg">
           <div class="container" data-aos="fade-up">
 
             <div class="section-title">
