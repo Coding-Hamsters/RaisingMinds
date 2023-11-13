@@ -47,13 +47,13 @@
                 <a class="nav-item nav-link" href="#">Community</a>
                 {% else %}
                 {% endif %}
-
+                {% if user.is_authenticated %}
                          <!-- dropdown user profile -->
                          <div id="dropdown" class="img ">
                           <ul class="navbar-nav mb-2 mb-lg-0 "> 
                               <li class="nav-item dropdown">
                                 <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                                  <img src="static/app/images/picture.jpeg" alt="Profile pictre">
+                                  <img src="{{profile.profile_image.url}}" alt="">
                                 </a>
                                 <ul class="dropdown-menu ">
                                   <li><a class="dropdown-item" href="#"><i class="fas fa-sliders-h fa-fw"></i> View Profile</a></li>
@@ -66,6 +66,8 @@
                            </ul>
                         </div>  
                         <!--end dropdown user profile -->
+                {% else %}
+                {% endif %}
             </div>
 
                 <!-- Donate button -->
