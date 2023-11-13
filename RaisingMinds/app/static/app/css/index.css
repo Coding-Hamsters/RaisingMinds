@@ -144,6 +144,10 @@ section {
     transition: 0.5s;
     background: #106eea; */
   }
+
+  #hero .log-in {
+    color: #fff;
+  }
   
   #hero .btn-watch-video i {
     color: #106eea;
