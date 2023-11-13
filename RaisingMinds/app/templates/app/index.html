@@ -37,9 +37,9 @@
             <div class="collapse navbar-collapse backGround" id="navbarCollapse">
             <!-- Nav -->
             <div class="navbar-nav mx-lg-auto">
-                <a class="nav-item nav-link active" href="{% url 'index' %}" aria-current="page">Home</a>
+                <a class="nav-item nav-link {% if navbar == 'index' %}active {% endif %}" href="{% url 'index' %}" aria-current="page">Home</a>
                 <a class="nav-item nav-link" href="#about">About</a>
-                <a class="nav-item nav-link" href="{% url 'projects' %}">Projects</a>
+                <a class="nav-item nav-link {% if navbar == 'projects' %} active {% endif %}" href="{% url 'projects' %}">Projects</a>
                 <!-- <a class="nav-item nav-link" href="#">Features</a> -->
                 <a class="nav-item nav-link" href="#team">Team</a>
                 <a class="nav-item nav-link" href="#contact">Contact</a>
