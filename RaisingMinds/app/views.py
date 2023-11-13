@@ -23,4 +23,10 @@ def home(request):
 
 def project(request):
 
-    return render(request,'app/projects.html',{'navbar':'projects'})
+    user = request.user
+    try:
+        profile = Profile.objects.get(user = request.user)
+    except:
+        profile = None
+
+    return render(request,'app/projects.html',{'user':user,'profile':profile,'navbar':'projects'})
