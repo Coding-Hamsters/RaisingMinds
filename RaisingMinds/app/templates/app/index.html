@@ -52,13 +52,13 @@
                          <div id="dropdown" class="img ">
                           <ul class="navbar-nav mb-2 mb-lg-0 "> 
                               <li class="nav-item dropdown">
-                                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                <a class="nav-link dropdown-toggle" href="{% url 'home' %}" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                                   <img src="{{profile.profile_image.url}}" alt="">
                                 </a>
-                                <ul class="dropdown-menu ">
-                                  <li><a class="dropdown-item" href="#"><i class="fas fa-sliders-h fa-fw"></i> View Profile</a></li>
+                                <ul class="dropdown-menu">
+                                  <li><a class="dropdown-item" href="{% url 'index' %}"><i class="fas fa-sliders-h fa-fw"></i> View Profile</a></li>
                                   <li><hr class="dropdown-divider"></li>
-                                  <li><a class="dropdown-item" href="#"><i class="fas fa-cog fa-fw"></i> Change Profile Picture</a></li>
+                                  <li><a class="dropdown-item" href="{% url 'index' %}"><i class="fas fa-cog fa-fw"></i> Change Profile Picture</a></li>
                                   <li><hr class="dropdown-divider"></li>
                                   {% if user.is_superuser %}
                                   <li><a class="dropdown-item" href="{% url 'admin:index' %}"><i class="fas fa-sign-out-alt fa-fw"></i>Admin Pannel</a></li>
