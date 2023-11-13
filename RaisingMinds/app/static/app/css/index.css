@@ -33,8 +33,6 @@ a:hover {
   text-decoration: none;
 }
 
-
-
 /*---------- dropdown--------- */
 .img{
     display: flex;
@@ -230,6 +228,73 @@ section {
       height: 120vh;
     }
   }
+
+  /*--------------------------------------------------------------
+# Box Section
+--------------------------------------------------------------*/
+#box .icon-boxes {
+  margin-top: 100px;
+}
+
+#box .icon-box {
+  padding: 50px 30px;
+  position: relative;
+  overflow: hidden;
+  background: #fff;
+  box-shadow: 0 0 29px 0 rgba(18, 66, 101, 0.08);
+  transition: all 0.3s ease-in-out;
+  border-radius: 8px;
+  z-index: 1;
+  text-align: center; /* Center align the content */
+}
+
+#box .icon-box .title {
+  font-weight: 700;
+  margin-bottom: 15px;
+  font-size: 18px;
+}
+
+#box .icon-box .title a {
+  color: #124265;
+  transition: 0.3s;
+}
+
+#box .icon-box .description {
+  font-size: 15px;
+  line-height: 28px;
+  margin-bottom: 0;
+}
+
+#box .icon-box .icon {
+  margin-bottom: 20px;
+  padding-top: 10px;
+  display: inline-block;
+  transition: all 0.3s ease-in-out;
+  font-size: 36px;
+  line-height: 1;
+  color: #2487ce;
+  margin: 0 auto; /* Center align the icon */
+}
+
+#box .icon-box:hover {
+  transform: scale(1.08);
+}
+
+#box .icon-box:hover .title a {
+  color: #2487ce;
+}
+
+@media (max-height: 800px) {
+  #box {
+    height: auto;
+  }
+}
+
+@media (max-width: 992px) {
+  #box {
+    height: auto;
+  }
+}
 
 /*--------------------------------------------------------------
 # About
