@@ -33,6 +33,74 @@ a:hover {
   text-decoration: none;
 }
 
+
+
+/*---------- dropdown--------- */
+.img{
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    width: 80px;
+    height: 100%;
+    cursor: pointer;
+    transition: color 0.3s;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;  
+    text-align: -webkit-match-parent;
+    list-style-type: disc;  
+    text-rendering: optimizeLegibility !important;
+    -webkit-font-smoothing: antialiased !important;
+}
+.img img{
+    height: 30px;
+    width: 30px;
+    border-radius: 50%;
+    border: 1px solid #e1e9ee;
+    margin: 0;
+    padding: 0;
+    
+}
+.img img:hover{
+    filter: brightness(0.8);
+}
+.padding{
+    padding-top :6.5px !important;
+    padding-bottom: 2px !important;
+   
+}
+.dropdown-menu{
+    background-color: #212529;
+    border: #212529;
+}
+.dropdown-menu li a{
+    color: #f3f5f8;
+    background-color: #212529;
+}
+
+@media (max-width: 985px)  {
+    .dropdown-toggle::after {
+      content: "";
+      margin: 0;
+      border-top: .3em solid;
+      border-right: .3em solid transparent;
+      border-bottom: 0;
+      border-left: .3em solid transparent;
+    }
+    .img{
+        width: 50px;    
+    }
+    .navbar-nav .dropdown-menu {
+        background-color: rgb(36, 36, 36);
+        position:static;
+        margin-right: -190px;
+        width: 200px;
+        
+    }
+}
+
+/*------------ end dropdown ------------------------------------------------*/
+
 /*--------------------------------------------------------------
 # Sections General
 --------------------------------------------------------------*/
