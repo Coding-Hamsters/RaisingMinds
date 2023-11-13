@@ -71,10 +71,8 @@
                   <a href="{% url 'logout' %}" class="btn-get-started">Logout</a> &nbsp;&nbsp;&nbsp;
                 {% else %}
                 <div class="d-flex">
-                  <!-- <a href="{% url 'login' %}" class="btn-get-started">Sign up</a> &nbsp;&nbsp;&nbsp; -->
-                  <button type="button" href="{% url 'signup' %}" class="btn log-in btn-outline-primary">SIGN UP</button>&nbsp;&nbsp;&nbsp;
-                  <button type="button" href="{% url 'login' %}" class="btn log-in btn-outline-primary">LOG IN</button>
-                  <!-- <a href="{% url 'signup' %}" class="btn-watch-video"><span>Log in</span></a> -->
+                  <a href="{% url 'login' %}" class="btn-get-started">Sign up</a> &nbsp;&nbsp;&nbsp;
+                  <a href="{% url 'signup' %}" class="btn-get-started"><span>Log in</span></a>
                 </div>
                 {% endif %}
             </div>           

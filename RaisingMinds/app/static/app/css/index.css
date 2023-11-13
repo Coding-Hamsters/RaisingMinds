@@ -71,7 +71,7 @@ section {
   #hero {
     width: 100%;
     height: 100vh;
-    background: url(/static/app/images/hero-bg.jpg) top left;
+    background: url("/static/app/images/projects-bg.jpg") top left;
     background-size: cover;
     position: relative;
   }
@@ -130,42 +130,6 @@ section {
     background: #247cf0;
   }
 
-  #hero .btn-watch-video {
-    font-size: 16px;
-    transition: 0.5s;
-    margin-left: 25px;
-    /* color: #fff; */
-    color: #fff;
-    font-weight: 600;
-    display: flex;
-    align-items: center;
-    /* padding: 10px 28px;
-    border-radius: 4px;
-    transition: 0.5s;
-    background: #106eea; */
-  }
-
-  #hero .log-in {
-    color: #fff;
-    font-weight: 700;
-  }
-  
-  #hero .btn-watch-video i {
-    color: #106eea;
-    font-size: 32px;
-    transition: 0.3s;
-    line-height: 0;
-    margin-right: 8px;
-  }
-
-  #hero .btn-watch-video:hover {
-    color: #106eea;
-  }
-  
-  #hero .btn-watch-video:hover i {
-    color: #3b8af2;
-  }
-
   @media (min-width: 1024px) {
     #hero {
       background-attachment: fixed;
@@ -188,8 +152,7 @@ section {
       margin-bottom: 30px;
     }
   
-    #hero .btn-get-started,
-    #hero .btn-watch-video {
+    #hero .btn-get-started {
       font-size: 13px;
     }
   }
