@@ -60,7 +60,10 @@
                                   <li><hr class="dropdown-divider"></li>
                                   <li><a class="dropdown-item" href="#"><i class="fas fa-cog fa-fw"></i> Change Profile Picture</a></li>
                                   <li><hr class="dropdown-divider"></li>
-                                  <li><a class="dropdown-item" href="#"><i class="fas fa-sign-out-alt fa-fw"></i> Log Out</a></li>
+                                  {% if user.is_superuser %}
+                                  <li><a class="dropdown-item" href="{% url 'admin:index' %}"><i class="fas fa-sign-out-alt fa-fw"></i>Admin Pannel</a></li>
+                                  {% else %}
+                                  {% endif %}
                                 </ul>
                               </li>
                            </ul>
