@@ -31,6 +31,7 @@ ALLOWED_HOSTS = []
 # Application definition
 
 INSTALLED_APPS = [
+    # 'jazzmin',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
@@ -43,6 +44,7 @@ INSTALLED_APPS = [
     'users',
     'user_profile',
     'school_profile',
+    'post',
 ]
 
 MIDDLEWARE = [
@@ -136,6 +138,10 @@ AUTH_USER_MODEL = 'users.User'
 # set up media settings
 MEDIA_URL = '/media/'
 MEDIA_ROOT = BASE_DIR / 'media/'
+
+# JAZZMIN_SETTINGS = {
+#      "site_title": "Library Admin",
+# }
 
 # email settings
 EMAIL_USE_TLS = True  
