@@ -20,6 +20,7 @@ from users import views as user_views
 from django.conf import settings
 from django.conf.urls.static import static
 from users import views as userviews
+from school_profile import views as school_profile_views
 
 urlpatterns = [
     path('admin/', admin.site.urls),
@@ -29,6 +30,8 @@ urlpatterns = [
     path('forget-password/' , userviews.ForgetPassword , name="forget_password"),
     path('change-password/<token>/' ,userviews.ChangePassword , name="change_password"),
     path('activate/<uidb64>/<token>',user_views.activate,name='activate'),
-    path('logout/',user_views.logout,name='logout')
+    path('logout/',user_views.logout,name='logout'),
+    path('schoolprofile/',school_profile_views.schoolprofile,name='schoolprofile')
+    
 
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
