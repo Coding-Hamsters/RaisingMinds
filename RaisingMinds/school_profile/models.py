@@ -2,6 +2,7 @@ from django.db import models
 from users.models import User
 
 # Create your models here.
+# build the schoolProfile model
 class schoolProfile(models.Model):
     user = models.OneToOneField(User,on_delete=models.CASCADE)
     school_name = models.CharField(max_length=100)
