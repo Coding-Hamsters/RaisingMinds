@@ -33,7 +33,8 @@ urlpatterns = [
     path('activate/<uidb64>/<token>',user_views.activate,name='activate'),
     path('logout/',user_views.logout,name='logout'),
     path('schoolprofile/<int:pk>/',school_profile_views.schoolprofile,name='schoolprofile'),
-    path('userprofile/',user_profile_views.userProfile,name='userprofile')
+    path('userprofile/',user_profile_views.userProfile,name='userprofile'),
+    path('userprofile/',user_profile_views.deleteUser,name='deleteuser')
     
 
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

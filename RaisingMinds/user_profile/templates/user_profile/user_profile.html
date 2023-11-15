@@ -11,8 +11,8 @@
    
     <!-- user settings form -->
     <div class="container">
-    <form class="p-3 align-content-center ">
-        
+    <form class="p-3 align-content-center " method="post" enctype="multipart/form-data">
+    {% csrf_token %} 
         <h3 class="font-weight-bold py-3 mb-2 ">
             Account settings</h3>
        
@@ -22,7 +22,7 @@
             <label class="mb-2">Change Profile Picture</label><br>
               
             <label class="btn btn-outline-secondary" for="photoHelp" id>
-            <input type="file" class="chooseFile" accept="image/png,image/jpeg,image/jpg" id="photoHelp">
+            <input type="file" class="chooseFile" name="image" accept="image/png,image/jpeg,image/jpg" id="photoHelp">
                     </label>
                     <div id="photoHelp" class="form-text">Please upload images in PNG, JPG, or JPEG format.</div>
                 
@@ -32,7 +32,7 @@
              <!-- username -->
              <div class="form-group mb-3 col-5">
                 <label class="form-label"for="username">username</label>
-                <input type="text" class="form-control mb-1 " placeholder="{{user.username}}"id="username">
+                <input type="text" class="form-control mb-1 " name="username" placeholder="{{user.username}}"id="username">
             </div>
               <!-- end username -->
             <div class="form-group mb-3 col-5 ">
@@ -40,18 +40,18 @@
               <input type="email" class="form-control" id="InputEmail1" placeholder="{{user.email}}" disabled>
             
             </div>
-            <div class="form-group mb-3 col-5" >
+            {% comment %} <div class="form-group mb-3 col-5" >
               <label for="InputPassword1" class="form-label">New Password</label>
               <input type="password" class="form-control" id="InputPassword1">
-            </div>
+            </div> {% endcomment %}
             <button type="submit" class="btn btn-primary">Save changes </button>
             
             <button type="reset" class="btn btn-primary "> &nbspReset&nbsp </button>
 
             <!-- delete account -->
-            <button type="button" class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#deleteAccountModal">
+            <!-- <button type="button" class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#deleteAccountModal">
                 Delete Account
-              </button>
+              </button> -->
                <!-- modal - delete account dialogbox -->
               <div class="modal fade" id="deleteAccountModal" tabindex="-1" aria-labelledby="deleteAccountModalLabel" aria-hidden="true">
                 <div class="modal-dialog">
@@ -72,6 +72,14 @@
               </div>
                 <!--  end modal delete account dialogbox -->
                   <!-- end  delete account -->
+          </form>
+
+          <form action="{% url 'deleteuser' %}" class="p-3 align-content-center" method="post">
+          {% csrf_token %}
+            <button type="button" class="btn btn-danger">
+                Delete Account
+              </button>
+               <!-- modal - delete account dialogbox-->
           </form>
 
         </div>

@@ -56,7 +56,7 @@
                                   <img src="{{profile.profile_image.url}}" alt="">
                                 </a>
                                 <ul class="dropdown-menu">
-                                  <li><a class="dropdown-item" href="{% url 'index' %}"><i class="fas fa-sliders-h fa-fw"></i> View Profile</a></li>
+                                  <li><a class="dropdown-item" href="{% url 'userprofile' %}"><i class="fas fa-sliders-h fa-fw"></i> View Profile</a></li>
                                   <li><hr class="dropdown-divider"></li>
                                   {% if user.schoolprofile %}
                                   <li><a class="dropdown-item" href="{% url 'schoolprofile' school_profile.pk %}"><i class="fas fa-cog fa-fw"></i>School Profile</a></li>

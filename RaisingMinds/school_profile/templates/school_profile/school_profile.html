@@ -125,17 +125,17 @@
    <!-- -------------end Create post----------- -->
 
                 <!-----------------Post 1-------------- -->
+                {% for post in posts %}
                 <article>
                     <div id="post-author" style="border-radius: 10px ;">
                         <a href="#">
                             <div>
-                                <img src="/images/profile_icon.jpeg" alt="">
+                                <img src="{{post.author.school_profile_img.url}}" alt="">
                                 <div>
                                     <div>
-                                        <strong id="post-author-name" class="letter-spacing">G/Ukwattha
-                                            Vidyalaya</strong>
+                                        <strong id="post-author-name" class="letter-spacing">{{post.author.school_name}}</strong>
                                     </div>
-                                    <span>1d</span>
+                                    <span>{{post.date_posted}}</span>
                                 </div>
                             </div>
                         </a>
@@ -147,12 +147,9 @@
                     </div>
                     <div id="post-data">
                        
-                        <img src="./images/post_body.jpg">
+                        <img src="{{post.post_image.url}}">
                         <p>
-                            Lorem ipsum dolor sit amet consectetur, adipisicing elit.
-                            Eligendi magni minus commodi placeat distinctio qui consectetur possimus assumenda culpa?
-                            Minus recusandae
-                            ea ullam distinctio omnis enim libero quod molestiae vero.
+                            {{post.content}}
                         </p>
 
                         <p id="post-translation">
@@ -169,6 +166,7 @@
                         </div>
                     </div>
                 </article>
+                {% endfor %}
                 <!----------------- end Post 1-------------- -->
 
 

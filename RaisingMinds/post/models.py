@@ -6,6 +6,7 @@ from school_profile.models import schoolProfile
 class Post(models.Model):
     author = models.ForeignKey(schoolProfile,on_delete=models.CASCADE)
     title = models.CharField(max_length=50)
+    post_image = models.ImageField(upload_to='post_images',blank=True)
     content = models.TextField()
     date_posted = models.DateTimeField(default=timezone.now)
     donate_amount = models.IntegerField()
