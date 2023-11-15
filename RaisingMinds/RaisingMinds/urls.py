@@ -31,7 +31,7 @@ urlpatterns = [
     path('change-password/<token>/' ,userviews.ChangePassword , name="change_password"),
     path('activate/<uidb64>/<token>',user_views.activate,name='activate'),
     path('logout/',user_views.logout,name='logout'),
-    path('schoolprofile/',school_profile_views.schoolprofile,name='schoolprofile')
+    path('schoolprofile/<int:pk>/',school_profile_views.schoolprofile,name='schoolprofile')
     
 
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

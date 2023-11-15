@@ -58,10 +58,14 @@
                                 <ul class="dropdown-menu">
                                   <li><a class="dropdown-item" href="{% url 'index' %}"><i class="fas fa-sliders-h fa-fw"></i> View Profile</a></li>
                                   <li><hr class="dropdown-divider"></li>
-                                  <li><a class="dropdown-item" href="{% url 'index' %}"><i class="fas fa-cog fa-fw"></i> Change Profile Picture</a></li>
+                                  {% if user.schoolprofile %}
+                                  <li><a class="dropdown-item" href="{% url 'schoolprofile' school_profile.pk %}"><i class="fas fa-cog fa-fw"></i>School Profile</a></li>
+                                  {% else %}
+                                  <li><a class="dropdown-item" href="{% url 'index' %}"><i class="fas fa-cog fa-fw"></i> Create School Profile</a></li>
+                                  {% endif %}
                                   <li><hr class="dropdown-divider"></li>
                                   {% if user.is_superuser %}
-                                  <li><a class="dropdown-item" href="{% url 'admin:index' %}"><i class="fas fa-sign-out-alt fa-fw"></i>Admin Pannel</a></li>
+                                  <li><a class="dropdown-item" href="{% url 'admin:index' %}"><i class="fas fa-sign-out-alt fa-fw"></i> Admin Pannel</a></li>
                                   {% else %}
                                   {% endif %}
                                 </ul>
