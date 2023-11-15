@@ -48,4 +48,13 @@ def project(request):
     except:
         profile = None
 
-    return render(request,'app/projects.html',{'user':user,'profile':profile,'navbar':'projects'})
+    try:
+        # get the current user's school profile
+        school_profile = schoolProfile.objects.get(user = request.user)
+        # school_profile = schoolProfile.objects.get(user = request.user)
+
+    except:
+        school_profile = None
+        # school_profile = None
+
+    return render(request,'app/projects.html',{'user':user,'profile':profile,'navbar':'projects','school_profile':school_profile})

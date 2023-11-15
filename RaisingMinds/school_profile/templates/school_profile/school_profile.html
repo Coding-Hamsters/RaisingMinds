@@ -17,9 +17,9 @@
                 <div id="profile-card">
                     <div id="background"></div>
                     <div id="profile-info">
-                        <img src="/images/profile_icon.jpeg" alt="Profile picture">
+                        <img src="{{school_profile.school_profile_img.url}}" alt="">
 
-                        <strong id="profile-name" class="letter-spacing">G/Ukwattha Vidyalaya</strong>
+                        <strong id="profile-name" class="letter-spacing">{{school_profile.school_name}}</strong>
                         <small>School Profile</small>
                         <span id="schoolName">Southern Province Galle</strong>
                     </div>
@@ -182,14 +182,13 @@
                     <h5 class="text-md-center fw-bold mb-3">School Details</h5>
                     <ul>
                       <li>
-                        <p>School Name : G/Ukwattha Vidyalaya</p>
+                        <p>School Name : {{school_profile.school_name}}</p>
                       </li>
                       <li>
-                        <p>Description  : This school is located in 
-                            the southern province and about 365 students are studying.</p>     
+                        <p>Description  : </p>     
                       </li> 
                       <li>
-                        <p >Principal's Name : S.C.Weerasinghe</p>
+                        <p >Principal's Name : {{school_profile.principal_name}}</p>
                       </li> 
                       <li>
                         <p >Contact : 0912247841</p>
