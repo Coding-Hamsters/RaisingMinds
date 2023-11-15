@@ -22,6 +22,7 @@ from django.conf.urls.static import static
 from users import views as userviews
 from school_profile import views as school_profile_views
 from user_profile import views as user_profile_views
+from post import views as post_views
 
 urlpatterns = [
     path('admin/', admin.site.urls),
@@ -34,7 +35,8 @@ urlpatterns = [
     path('logout/',user_views.logout,name='logout'),
     path('schoolprofile/<int:pk>/',school_profile_views.schoolprofile,name='schoolprofile'),
     path('userprofile/',user_profile_views.userProfile,name='userprofile'),
-    path('userprofile/',user_profile_views.deleteUser,name='deleteuser')
+    path('userprofile/',user_profile_views.deleteUser,name='deleteuser'),
+    path('community/',post_views.community,name='community')
     
 
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

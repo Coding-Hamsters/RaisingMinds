@@ -1,7 +1,7 @@
 body{
     background:#f5f5f5;
 }
-.logo {
+/* .logo {
     display: flex;
     font-size: 20px;
     font-weight: 500;
@@ -16,7 +16,7 @@ a {
 }
 
 /*---------- dropdown--------- */
-.img{
+/* .img{
     display: flex;
     align-items: center;
     justify-content: flex-end;
@@ -77,7 +77,7 @@ a {
         width: 200px;
         
     }
-}
+} */ */
 
 /*------------ end dropdown ------------------------------------------------*/
 
