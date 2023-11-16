@@ -11,6 +11,7 @@ class Post(models.Model):
     date_posted = models.DateTimeField(default=timezone.now)
     donate_amount = models.IntegerField()
     current_amount = models.IntegerField(blank=True)
+    is_approved = models.BooleanField(default=False)
 
     def __str__(self):
         return self.title

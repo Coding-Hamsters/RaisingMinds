@@ -60,6 +60,7 @@
         <div id="main-wrapper">
             <main id="main-section">
                 <!-- **********Create post*********  -->
+                {% if user == school_profile.user %}
                 <div id="share-box" class="share-box">
                     <div id="button-box" style="border-radius:10px;">
 
@@ -77,8 +78,12 @@
                     </div>
 
                 </div>
+                {% else %}
+                {% endif %}
              
                 <!-- Modal create post -->
+            
+            
             <form>
                 <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
                     <div class="modal-dialog modal-dialog-centered">
@@ -100,7 +105,8 @@
                         </div>
                     </div>
                 </div>
-            </form>
+            </form> 
+            
                  <!-- end of modal -->
                  <br>
                 <div id="feed-sort">
@@ -126,6 +132,7 @@
 
                 <!-----------------Post 1-------------- -->
                 {% for post in posts %}
+                    {%  if post.is_approved %}
                 <article>
                     <div id="post-author" style="border-radius: 10px ;">
                         <a href="#">
@@ -166,6 +173,7 @@
                         </div>
                     </div>
                 </article>
+                {% endif %}
                 {% endfor %}
                 <!----------------- end Post 1-------------- -->
 

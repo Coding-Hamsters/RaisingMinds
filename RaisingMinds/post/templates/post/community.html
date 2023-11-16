@@ -96,19 +96,22 @@
                 <div class="main ">
                     <!-- start fist post -->
 
+                {% for post in posts %}
+                    {% if post.is_approved %}
                     <!--  post-author -->
                     <div class="post1 mb-3" style="border-radius: 2%;">
                     
                     <div id="post-author" >
-                        <a href="#">
+                        <a href="{% url 'schoolprofile' post.author.pk %}">
                             <div>
-                                <img src="/images/profile_icon.jpeg" alt="image">
+                                <img src="{{post.author.school_profile_img.url}}" alt="image">
                                 <div>
                                     <div>
                                         <button id="schoolname" class="mt-0">
-                                        <strong id="post-author-name" class="">G/Ukwattha
-                                            Vidyalaya</strong> 
-                                            <p class="text-start"><span id="post-update-date">Nov. 15 2023, 9:25 p.m.</span></p>
+                                        
+                                        <strong id="post-author-name" class="">{{post.author.school_name}}</strong> 
+                                        
+                                            <p class="text-start"><span id="post-update-date">{{post.date_posted}}</span></p>
                                         </button>
                                     </div>
                                 </div>
@@ -123,16 +126,13 @@
                     </div>
                     <!-- end  post-author -->
                     <div class="post-data">
-                       <h5 class="mt-1 mb-2" style="padding-left:5px ; padding-right:5px ;">Rebuilding the Drinking water supply
-                            and collecting funds for a Science Lab.</h5>
+                       <h5 class="mt-1 mb-2" style="padding-left:5px ; padding-right:5px ;">{{post.title}}</h5>
                        <div style="padding:5px">
-                        <img src="/images/post_body.jpg" alt="image"  width="100%">
+                        <img src="{{post.post_image.url}}" alt="image"  width="100%">
                        </div>
                       
                        
-                        <p class="mt-2 text-start p-2 ">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Alias dignissimos tenetur, omnis laboriosam quia, unde molestias recusandae architecto consequatur quis quasi sapiente dolor nam, repellendus magni voluptatibus impedit non voluptatum.
-                        Vitae nisi corporis distinctio obcaecati quia iusto quo qui. Ipsam esse voluptatem, commodi fugiat recusandae maxime in pariatur, sint et ad officiis inventore nulla unde doloremque consectetur itaque, consequatur ratione.
-                    </p>
+                        <p class="mt-2 text-start p-2 ">{{post.content}}</p>
                         <div class="progressbar p-2">
                             <h4>Progress</h4>
                             <div class="progress">
@@ -153,6 +153,8 @@
                         </div><br>
                     </div>
                 </div>
+                {% endif %}
+            {% endfor %}
                 <!-------------------end first post-------------------------->
              </div>
               </div>

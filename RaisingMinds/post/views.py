@@ -9,7 +9,7 @@ def community(request):
      # get current authenticated user
     user = request.user
     # get all post in Post model
-    post = Post.objects.all()
+    posts = Post.objects.all()
     
     try:
         # get the current user's profile
@@ -29,4 +29,4 @@ def community(request):
         school_profile = None
         # school_profile = None
 
-    return render(request,'post/community.html',{'user':user,'profile':profile,'navbar':'community','post':post,'school_profile':school_profile})
+    return render(request,'post/community.html',{'user':user,'profile':profile,'navbar':'community','posts':posts,'school_profile':school_profile})
