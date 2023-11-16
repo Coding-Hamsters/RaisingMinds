@@ -94,9 +94,13 @@
                                     aria-label="Close"></button>
                             </div>
                             <div class="modal-body">
-                                <textarea style="width: 100%; height: 90%;" required></textarea>
+                                <input type="text" class=" title mb-3" placeholder="Enter title here" required>
+                                <textarea class="description mb-2" placeholder="Enter Description here ..." required ></textarea>
+                                <input class ="goalAmount mb-2"type="number" placeholder="Enter Goal amount Rs/="> 
+                                <input  class="phoneNo mb-2"type="number" placeholder="Enter Phone No" required>
                                 <input type="file" id="photoInput" accept="image/jpeg, image/png, image/jpg" required>
-                                <button type="button" onclick="uploadPhoto()">Upload Photo</button>   
+                                <button class="text-end" type="button" onclick="uploadPhoto()">Upload Photo</button>   
+
                             </div>
                             <div class="modal-footer">
                                 <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>

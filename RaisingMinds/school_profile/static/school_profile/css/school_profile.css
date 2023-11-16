@@ -224,9 +224,23 @@ div.container main#main-section {
 /* modal styles */
 
 .modal-content{
-    height: 400px;
+    height: 600px;
 }
-
+.title{
+    width: 100%;
+    height: 10%;
+    padding-bottom: 5px;
+}
+.description{
+    width: 100%; 
+    height: 65%;
+}
+.goalAmount{
+    width:49% ;
+}
+.phoneNo{
+    width:49%;
+}
   
 main#main-section div#share-box {
     background: #fff;
