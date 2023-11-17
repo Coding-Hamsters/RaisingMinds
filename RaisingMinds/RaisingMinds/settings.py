@@ -45,6 +45,7 @@ INSTALLED_APPS = [
     'user_profile',
     'school_profile',
     'post',
+    'payments',
 ]
 
 MIDDLEWARE = [
