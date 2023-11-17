@@ -83,6 +83,16 @@ div img{
         width: 130%;
     }
   }
+   /* paypal donate button */
+   input[type="image"] {
+    filter: hue-rotate(240deg);
+    /*Changetheimagetoblue*/display: block;
+    margin: 0 auto;
+    -webkit-filter: hue-rotate(240deg);
+}
+    /* paypal donate button */
+  
+  
 
   @media (max-width: 767.9px) {
     .donateAmount{
