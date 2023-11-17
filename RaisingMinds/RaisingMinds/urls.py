@@ -23,6 +23,7 @@ from users import views as userviews
 from school_profile import views as school_profile_views
 from user_profile import views as user_profile_views
 from post import views as post_views
+from payments import views as payment_views
 
 urlpatterns = [
     path('admin/', admin.site.urls),
@@ -36,7 +37,13 @@ urlpatterns = [
     path('schoolprofile/<int:pk>/',school_profile_views.schoolprofile,name='schoolprofile'),
     path('userprofile/',user_profile_views.userProfile,name='userprofile'),
     path('userprofile/',user_profile_views.deleteUser,name='deleteuser'),
-    path('community/',post_views.community,name='community')
+    path('community/',post_views.community,name='community'),
+
+    # payments
+    path('paypal/', include("paypal.standard.ipn.urls")),
+    path('checkout/<int:post_id>/', payment_views.checkout, name='checkout'),
+    path('payment-success/<int:post_id>/', payment_views.paymentSuccess, name='payment-success'),
+    path('payment-failed/<int:post_id>/', payment_views.paymentFail, name='payment-failed'),
     
 
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

@@ -6,3 +6,5 @@ donateButton.addEventListener('click', () => {
   const donateAmountValue = parseInt(donateAmountInput.value);
   donateAmountLabel.textContent = `Donate amount : $ ${donateAmountValue}.00`;
 });
+
+// Check if there's a stored donate amount value

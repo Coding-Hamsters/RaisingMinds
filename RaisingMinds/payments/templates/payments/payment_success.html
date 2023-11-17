@@ -1,3 +1,4 @@
+{% load static %}
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -13,7 +14,7 @@
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
     
     <!-- css link local -->
-    <link rel="stylesheet" href="./payment.success.css">
+    <link rel="stylesheet" href="{% static 'payments/css/payments_success.css' %}">
     <title>Payment Sucess</title>
     
 </head>
@@ -30,7 +31,7 @@
                 <div class="text-center">
                     <h1>Thank You !</h1>
                     <p>Payment Sucessful</p>
-                    <button class="btn btn-outline-success"><a href="">Back Home</a></button>
+                    <button class="btn btn-outline-success"><a href="{% url 'community' %}">Back Home</a></button>
                 </div>
             </div>
             <div class="border border-4 border-success"></div>

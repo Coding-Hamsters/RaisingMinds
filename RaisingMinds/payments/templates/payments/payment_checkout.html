@@ -1,3 +1,4 @@
+{% load static %}
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -9,7 +10,7 @@
      <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" rel="stylesheet" />
      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" />
      <!-- external CSS -->
-    <link rel="stylesheet" href="./payment-chekout.css">
+    <link rel="stylesheet" href="{% static 'payments/css/payment_checkout.css' %}">
 
    
    
@@ -19,43 +20,43 @@
     <div class="container">
 
         <div class="row">
-            <!------------------left------------------------------------------->
+           
 
             <div class="col left"> </div>
 
-            <!-- -------------------middle------------------------------------->
+            
             <div class="col-6 mt-2 middle p-5">
-                <form>
+                
+                <form method="post">
+                    {% csrf_token %}
                     <div class=" p-2  main" >
                     <h4 class="text-center mb-4">Donate for Lab Royal Collage 
                         </h4>
                      <div>
-                         <img class="" src="./images/donate.jpg" alt="post image" width="90%"/>
+                         <img class="" src="{{post.post_image.url}}" alt="post image" width="90%"/>
                      </div>
                      <div class="mt-3 js">
-                        <label >Donate amount :</label><br>
+                        <label >Donate amount : {{donate}}</label><br>
                      </div>
                     
                      <div class="input-group mb-4">
-                        <input type="number" class="donateAmount form-control" placeholder="Enter Value..." aria-describedby="button-addon2"required>
-                        <button class="btn btn-primary" type="button" id="button-addon2">Add</button>
+                        <input type="number" class="donateAmount form-control" name="amount" placeholder="Enter Value..." aria-describedby="button-addon2"required>
+                        <button class="btn btn-primary" type="submit" id="button-addon2">Add</button>
                       </div>
-                      <!-----paynow button------------------->
-                     <div class="mb-3  paynowBtn ">
-                        <button type="submit" class=" form-control btn btn-primary  paynowBtn2">Pay Now</button>
-                    </div>
-                     <!---------end paynow button------------>
+                      
+                    
+                     
                     </div>
                 </form>
+                <br>
+                
+                {{paypal.render}}
             </div>
-             <!-- -----------------end middle------------------------------------->
-
-            <!-- ----------------------right------------------------------------>
             <div class="col right"></div>
           
         </div>
     </div>
      <!-- javscript file -->
-    <script src="./payment-chekout.js"></script>
+    <script src="{% static 'payments/js/payment_checkout.js' %}"></script>
 </body>
 </html>

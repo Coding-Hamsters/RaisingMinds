@@ -46,6 +46,9 @@ INSTALLED_APPS = [
     'school_profile',
     'post',
     'payments',
+
+    #paypal
+    'paypal.standard.ipn',
 ]
 
 MIDDLEWARE = [
@@ -150,3 +153,10 @@ EMAIL_HOST = 'smtp.gmail.com'
 EMAIL_HOST_USER = 'raisingmindsfoundation@gmail.com'  
 EMAIL_HOST_PASSWORD = 'hslg eumv naye mmvr'  
 EMAIL_PORT = 587 
+
+# paypal settings
+PAYPAL_RECEIVER_EMAIL = 'RaisingMinds@gmail.com'
+PAYPAL_TEST = True
+
+# PAYPAL_BUY_BUTTON_IMAGE = 'https://res.cloudinary.com/the-proton-guy/image/upload/v1685882223/paypal-PhotoRoom_v9pay7.png'
+PAYPAL_BUY_BUTTON_IMAGE = 'https://res.cloudinary.com/ds2czl0am/image/upload/c_scale,w_100/v1700198930/d4aurt73ahxoifyt64hs.png'
