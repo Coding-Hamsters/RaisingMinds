@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>form</title>
+  <!-- bootstrap CDN links -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" />
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" rel="stylesheet" />
+  <!-- icon links -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" />
+  <link rel="stylesheet"
+    href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+  <link rel="stylesheet" type="text/css" href="./school-registration-form.css">
+</head>
+
+<body>
+  <!-- nav bar -->
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark  fixed-top padding">
+    <div class="container Inpadding ">
+      <!-- Logo -->
+      <div class="fixedLogo">
+        <a href="#">
+          <div class="logo" class="h-8 size bg-dark">Raising Minds</div>
+        </a>
+      </div>
+      <!-- Navbar toggle -->
+      <button class="navbar-toggler " type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse"
+        aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <!-- Collapse -->
+      <div class="collapse navbar-collapse backGround" id="navbarCollapse">
+        <!-- Nav -->
+        <div class="navbar-nav mx-lg-auto">
+          <a class="nav-item nav-link " href="#">Home</a>
+          <a class="nav-item nav-link " href="#">About</a>
+          <a class="nav-item nav-link " href="#">Projects</a>
+          <a class="nav-item nav-link" href="#">Team</a>
+          <a class="nav-item nav-link" href="#">Contact</a>
+          <a class="nav-item nav-link " href="#">Community</a>
+          <!-- dropdown -->
+          <div id="dropdown" class="img ">
+            <ul class="navbar-nav mb-2 mb-lg-0 ">
+              <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown"
+                  aria-expanded="false">
+                  <img src="/images/profile_icon.jpeg" alt="Profile pictre">
+                </a>
+                <ul class="dropdown-menu ">
+                  <li><a class="dropdown-item" href="#"><i class="fas fa-sliders-h fa-fw"></i> Account Settings</a></li>
+                  <li>
+                    <hr class="dropdown-divider">
+                  </li>
+                  <li><a class="dropdown-item" href="#"><i class="fas fa-cog fa-fw"></i> Create School Profile</a></li>
+                  <li>
+                    <hr class="dropdown-divider">
+                  </li>
+                  <li><a class="dropdown-item" href="#"><i class="fas fa-sign-out-alt fa-fw"></i> Log Out</a></li>
+                </ul>
+              </li>
+            </ul>
+          </div>
+
+
+        </div>
+
+        <!-- Donate button -->
+        <div class="d-flex align-items-lg-center mt-3 mt-lg-0 disabled">
+          <a href="#" class="btn btnDonate-style btn-sm btn-primary w-full w-lg-auto custom-btn">
+            Donate
+          </a>
+
+        </div>
+      </div>
+  </nav>
+  <!--------------------------END nav bar-------------------------------------->
+
+  <!-- form -->
+  <br><br><br><br>
+
+  <div class="row justify-content-center formStyle">
+    <div class="col-md-5 ">
+      <form class="container" method="post">
+        <div class="fotmStyle2">
+          <h2 class="text-center mb-4">School Registration Form</h2>
+          <div class="form-group mb-2">
+            <label for="schoolName" class="mb-1">School Name:</label>
+            <input type="text" class="form-control" id="schoolName" placeholder="Enter School Name" required
+              name="schoolName">
+          </div>
+
+          <div class="form-group mb-2">
+            <label for="schoolPrincipalName" class="mb-1">School Principal Name:</label>
+            <input type="text" class="form-control" id="schoolPrincipalName" placeholder="Enter Principal name "
+              required name="principalName">
+          </div>
+
+          <div class=" mb-2">
+            <div class="form-group col">
+              <label for="Email1" class="mb-1">School Email address:</label>
+              <input type="email" class="form-control" id="Email1" placeholder="Enter email" required name="email">
+            </div>
+          </div>
+          <div class="row mb-2">
+            <div class="form-group col">
+              <label for="schoolProvince" class="mb-1">School Province :</label>
+              <input type="text" class="form-control" id="schoolProvince" placeholder="Enter school province" required
+                name="schoolProvince">
+            </div>
+            <div class="form-group col">
+              <label for="agentDesignation" class="mb-1">School District :</label>
+              <input type="text" class="form-control" id="agentDesignation" placeholder="Enter school District"
+                required>
+            </div>
+
+          </div>
+          <div class="row">
+            <div class="form-group col">
+              <label for="phoneNumber" class="mb-1">School Phone No:</label>
+              <input type="number" class="form-control" id="password" placeholder="Enter Phone Number" required
+                name="phoneNo">
+            </div>
+
+            <div class="form-group col mb-2">
+              <label for="Select" selected class="mb-1">School Type:</label>
+              <select class="form-control" id="Select" required>
+                <option selected>Select Your School Type</option>
+                <option>Mixed School</option>
+                <option>Boyes School</option>
+                <option>Girls School</option>
+              </select>
+            </div>
+          </div>
+
+          <div class="form-group mb-2">
+            <label for="Textarea1" class="mb-1">School Address:</label>
+            <textarea class="form-control" id="Textarea1" rows="3" placeholder="Enter school address here..." required
+              name="schoolAddress"></textarea>
+          </div>
+          <div class="form-group mb-3">
+            <label for="Textarea1" class="mb-1">Description:</label>
+            <textarea class="form-control" id="Textarea1" rows="3" placeholder="Enter your text here..." name="description"></textarea>
+          </div>
+          <div class="row">
+
+            <div class="form-group mb-2 col">
+              <label for="File1"> Verification document :</label>
+              <input type="file" class="form-control-file" id="File1" accept="application/pdf"name="File1">
+
+            </div>
+            <div class="form-group mb-3 col imageP">
+              <label for="image">School profile picture : </label>
+              <input type="File" class="form-control-file2" id="image" accept="image/jpeg,image/png,image/jpg," name="image">
+
+
+            </div>
+           
+          </div>
+
+          <!----------------------------modal------------------------------------->
+          <div class="modal fade show" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel"
+            aria-hidden="true">
+
+            <div class="modal-dialog modal-dialog-centered">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <h5 class="modal-title" id="exampleModalLabel">User Agreement</h5>
+                  <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+
+                  <div style="align-items:center;display: flex;text-align: justify;">
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Quam dolorem consequatur tenetur culpa quia
+                    illo voluptatum eius vel cum in! Sint molestias sed error assumenda reiciendis eligendi ullam
+                    laboriosam at!
+                    Fugit eveniet maxime mollitia cupiditate error commodi animi neque deserunt ab. Officiis, harum
+                    quia! Excepturi vitae ab, porro enim ipsam culpa rem tempora eos nemo eligendi! Voluptatem dicta
+                    expedita reprehenderit.
+                    Possimus, iure cupiditate. Sit nobis nemo aliquid ut repellat vitae totam ipsum suscipit dicta
+                    asperiores ab soluta quis, sunt expedita quam possimus quo voluptate. Pariatur ratione dolorum ex
+                    obcaecati velit!
+                    Natus, facilis beatae. Repudiandae, minus reiciendis? Non ducimus quaerat soluta eius voluptas
+                    voluptatibus vitae saepe assumenda, eaque labore harum sapiente, adipisci porro ratione amet totam
+                    suscipit, aut dignissimos! Laborum, incidunt.
+                    Ducimus aliquam exercitationem voluptatum voluptatem vero sunt, ex assumenda maxime quibusdam fugiat
+                    quis quidem. Ratione, non aliquid praesentium magnam enim vel molestias harum quos illo quia,
+                    laborum corporis aperiam nulla.
+                  </div>
+
+                </div>
+                <div class="modal-footer">
+                  <button type="button" class="btn btn-primary" data-bs-dismiss="modal" aria-label="Close">OK</button>
+
+                </div>
+              </div>
+            </div>
+          </div>
+  <!----------------------------end modal------------------------------------->
+          <div class="form-check mb-4">
+            <input type="checkbox" class="form-check-input" id="ageement" required>
+            <label class="form-check-label" for="ageement">I accept all the terms and conditions.</label>
+            <!--  link with  modal -->
+            <button type="button" id="btn-agreement" data-bs-toggle="modal" data-bs-target="#exampleModal"
+              name="btn-agreement">
+              <span class="material-symbols">View</span>
+            </button>
+          </div>
+
+          <div class="row">
+            <div class="col-6">
+              <button type="submit" class="btn btn-primary col-12 btnLast">SUBMIT</button>
+            </div>
+            <div class="col-6">
+              <button type="reset" class="btn btn-primary col-12 btnLast">RESET</button>
+            </div>
+          </div>
+
+
+        </div>
+      </form>
+    </div>
+  </div>
+  <br><br>
+
+  <!-- bootstrap javascript link -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+    crossorigin="anonymous"></script>
+
+</body>
+
+</html>
