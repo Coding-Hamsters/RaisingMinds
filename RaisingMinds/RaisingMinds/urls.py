@@ -44,6 +44,7 @@ urlpatterns = [
     path('checkout/<int:post_id>/', payment_views.checkout, name='checkout'),
     path('payment-success/<int:post_id>/', payment_views.paymentSuccess, name='payment-success'),
     path('payment-failed/<int:post_id>/', payment_views.paymentFail, name='payment-failed'),
+    path('schoolprofilecreate/',school_profile_views.createSchoolProfile,name='schoolprofilecreate')
     
 
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

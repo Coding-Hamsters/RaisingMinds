@@ -39,3 +39,7 @@ def schoolprofile(request,pk):
     
 
     return render(request,'school_profile/school_profile.html',{'user':user,'profile':profile,'school_profile':school_profile,'posts':posts})
+
+def createSchoolProfile(request):
+    
+    return render(request,'school_profile/school_registration.html')

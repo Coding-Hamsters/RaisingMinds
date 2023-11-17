@@ -6,10 +6,13 @@ from users.models import User
 class schoolProfile(models.Model):
     user = models.OneToOneField(User,on_delete=models.CASCADE)
     school_name = models.CharField(max_length=100)
+    school_type = models.CharField(max_length=20,blank=True)
     principal_name = models.CharField(max_length=100)
     province = models.CharField(max_length=100)
     district = models.CharField(max_length=100)
     address = models.TextField()
+    school_email = models.EmailField(blank=True)
+    school_telephone = models.CharField(max_length=10,blank=True)
     verification_doc = models.FileField(upload_to='schoolProfile_vetification_documents')
     school_profile_img = models.ImageField(upload_to='schoolProfile_profile_images')
     is_verified = models.BooleanField(default=True)
