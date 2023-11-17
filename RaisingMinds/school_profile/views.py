@@ -1,4 +1,4 @@
-from django.shortcuts import render
+from django.shortcuts import render,redirect
 from user_profile.models import Profile
 from .models import schoolProfile
 from post.models import Post
@@ -25,5 +25,17 @@ def schoolprofile(request,pk):
         posts = Post.objects.all().filter(author = school_profile)
     except:
         posts = None
+
+    if request.method == 'POST':
+        title = request.POST.get('title')
+        description = request.POST.get('description')
+        goal_donation = request.POST.get('goal_donation')
+        post_img = request.FILES.get('post_img')
+
+        new_post = Post.objects.create(author = school_profile,title = title,content = description,donate_amount = goal_donation,post_image = post_img)
+        new_post.save()
+
+        
+    
 
     return render(request,'school_profile/school_profile.html',{'user':user,'profile':profile,'school_profile':school_profile,'posts':posts})

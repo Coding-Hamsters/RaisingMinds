@@ -10,7 +10,7 @@ class Post(models.Model):
     content = models.TextField()
     date_posted = models.DateTimeField(default=timezone.now)
     donate_amount = models.IntegerField()
-    current_amount = models.IntegerField(blank=True)
+    current_amount = models.IntegerField(blank=True,default=0)
     is_approved = models.BooleanField(default=False)
 
     def __str__(self):
