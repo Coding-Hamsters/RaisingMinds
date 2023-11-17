@@ -99,7 +99,7 @@
                                 <input type="number" class=" title mb-3" placeholder="Enter Goal amount ..." required> 
                                
                                 <input type="file" id="photoInput" accept="image/jpeg, image/png, image/jpg" required>
-                                <button class="text-end" type="button" onclick="uploadPhoto()">Upload Photo</button>   
+                                <input  class="text-end" type="button" onclick="uploadPhoto()" required>Upload Photo
 
                             </div>
                             <div class="modal-footer">
@@ -221,7 +221,7 @@
         <br><br>
 
         
-        <script src="./school-profile.js"></script>
+        <script src="{% static 'school_profile/js/school_profile.js'%}"></script>
            
 {% comment %} </body> {% endcomment %}
 {% endblock %}
