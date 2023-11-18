@@ -25,6 +25,11 @@ from user_profile import views as user_profile_views
 from post import views as post_views
 from payments import views as payment_views
 
+# customize the admin pannel
+admin.site.site_header = "Raising Minds"
+admin.site.site_title = "Site Administration"
+admin.site.index_title = "RaisingMinds"
+
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('',include('app.urls')),
