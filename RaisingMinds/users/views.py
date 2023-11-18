@@ -77,7 +77,8 @@ def login(request):
             return redirect('index')
         
         else:
-            return HttpResponse('<h1>Username or Password is invalid</h1>')
+            messages.error(request,'email or password is invalid!')
+            redirect('login')
 
     return render(request,'users/login.html')
 
