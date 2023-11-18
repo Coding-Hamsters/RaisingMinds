@@ -38,11 +38,11 @@
             <div class="collapse navbar-collapse backGround" id="navbarCollapse">
                 <!-- Nav -->
                 <div class="navbar-nav mx-lg-auto">
-                    <a class="nav-item nav-link " href="#">Home</a>
-                    <a class="nav-item nav-link " href="#">About</a>
-                    <a class="nav-item nav-link " href="#">Projects</a>
-                    <a class="nav-item nav-link" href="#">Team</a>
-                    <a class="nav-item nav-link" href="#">Contact</a>
+                    <a class="nav-item nav-link " href="{% url 'index' %}">Home</a>
+                    <a class="nav-item nav-link " href="{% url 'index' %}#about">About</a>
+                    <a class="nav-item nav-link " href="{% url 'projects' %}">Projects</a>
+                    <a class="nav-item nav-link" href="{% url 'index' %}#team">Team</a>
+                    <a class="nav-item nav-link" href="{% url 'index' %}#contact">Contact</a>
                 </div>
             </div>
         </div>
