@@ -21,7 +21,7 @@
 
                         <strong id="profile-name" class="letter-spacing">{{school_profile.school_name}}</strong>
                         <small>School Profile</small>
-                        <span id="schoolName">Southern Province Galle</strong>
+                        <!-- <span id="schoolName">{{school_profile.province}} Province {{school_profile.district}}</strong> -->
                     </div>
                 </div>
                 <div id="profile-groups" style="margin-top:270px;">
@@ -158,35 +158,36 @@
                         </div>
                     </div>
                     <div id="post-data">
-                        
-                        <h5 class="mt-1 mb-1 text-center postTitle">Rebuilding the Drinking water supply
-                            and collecting funds for a Science Lab.</h5>
+                        <h5 class="mt-1 mb-1 text-center postTitle">{{post.title}}.</h5>
                        
                  
                         <img src="{{post.post_image.url}}">
                         <p>
                             {{post.content}}
                         </p>
-                    <!----------------------------------progress bar--------------------------->
+                    
                         <div class="progressbar ">
                             <h4 class="mb-3">Progress</h4>
                             <div class="progress" >
-                              <div class="progress-bar" role="progressbar" style="width: 50%;" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100">50%</div>
+                              <div class="progress-bar" role="progressbar" style="width: {% widthratio post.current_amount post.donate_amount 100 %}%;" aria-valuenow="{% widthratio post.current_amount post.donate_amount 100 %}" aria-valuemin="0" aria-valuemax="100">{% widthratio post.current_amount post.donate_amount 100 %}%</div>
                             </div>
                             <div class="row">
                               <div class="col-sm-6 mt-1">
-                                  <p>Goal : LKR 100,000</p>
+                                  <p>Goal : $ {{post.donate_amount}}</p>
                               </div>
                               <div class="col-sm-6 mt-1">
-                                  <p>Current : LKR 50,000</p>
+                                  <p>Current : LKR {{post.current_amount}}</p>
                               </div>
                           </div>
                           <div  class="text-center">
-                            <button type="button" class="btn donate btn-outline-primary mb-3 " >Donate</button>
+                            <button type="button" class="btn donate btn-outline-primary mb-3" onclick="window.location.href='{% url 'checkout' post.id %}'"
+                            {% if post.donate_amount <= post.current_amount %}disabled{% endif %} >
+                            Donate
+                        </button>
                           </div>
                           
                         </div>
-  <!----------------------------------progress bar--------------------------->
+
                     </div>
                     <div id="post-interactions">
                         <div id="interactions-btns">
@@ -215,14 +216,20 @@
                         <p>School Name : {{school_profile.school_name}}</p>
                       </li>
                       <li>
-                        <p>School Type : {{school_profile.school_name}}</p>
+                        <p>School Type : {{school_profile.school_type}}</p>
+                      </li>
+                      <li>
+                        <p>Province : {{school_profile.province}}</p>
+                      </li>
+                      <li>
+                        <p>District : {{school_profile.district}}</p>
                       </li>
                       <li>
                         <p>School Address : {{school_profile.address}}</p>
                       </li>
-                      <li>
+                      <!-- <li>
                         <p>Description  : {{school_profile.Description}}</p>     
-                      </li> 
+                      </li>  -->
                       <li>
                         <p >Principal's Name : {{school_profile.principal_name}}</p>
                       </li> 
