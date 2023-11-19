@@ -396,6 +396,7 @@ main#main-section article div#post-author a > div > div div span span {
 
 main#main-section article div#post-data p {
     padding: 8px 14px 0;
+    text-align: justify;
 }
 
 main#main-section article div#post-data p span {
@@ -408,31 +409,28 @@ main#main-section article div#post-data p a {
     color: #0073b1;
     font-weight: bold;
 }
-
-main#main-section article div#post-data p#post-translation {
-    padding-left: 10px;
+/*------------progress bar--------------*/
+.progressbar{
+    padding-left:25px; 
+    padding-right: 25px;
+}
+.progressbar h4{
+    text-align: center;
+    
+}
+.progressbar button{
+    text-align: center !important;
 }
 
-main#main-section article div#post-data p#post-translation button {
-    border: 0;
-    background: #0d6efd;
-    color: #ffffff;
-    font-weight: bold;
-    font-size: 14px;
-    margin-bottom: 10px;
-    padding: 4px 7px;
-    cursor: pointer;
-    transition: background-color 0.3s;
-}
-main#main-section article div#post-data p#post-translation button:hover {
-    background-color: #215eb9;
-}
+/*------------progress bar--------------*/
 
 main#main-section article div#post-data img {
     width: 100%;
     cursor: pointer;
     border-bottom: 1px solid #e6e9ec;
     border-top: 1px solid #e6e9ec;
+    padding: 5px;
+    
 }
 
 
