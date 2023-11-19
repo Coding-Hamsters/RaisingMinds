@@ -409,6 +409,13 @@ main#main-section article div#post-data p a {
     color: #0073b1;
     font-weight: bold;
 }
+
+.postTitle{
+    padding-left: 5px;
+    padding-right: 5px;
+    border-top: 1px solid #e6e9ec
+}
+
 /*------------progress bar--------------*/
 .progressbar{
     padding-left:25px; 
