@@ -18,7 +18,7 @@ class schoolProfile(models.Model):
     verification_doc = models.FileField(upload_to='schoolProfile_vetification_documents')
     school_profile_img = models.ImageField(upload_to='schoolProfile_profile_images')
     date_created = models.DateTimeField(default=timezone.now)
-    is_verified = models.BooleanField(default=True)
+    is_verified = models.BooleanField(default=False)
 
     def __str__(self):
         return self.school_name
