@@ -31,7 +31,7 @@ def index(request):
         school_profile = None
         # school_profile = None
 
-    return render(request,'app/index.html',{'user':user,'profile':profile,'navbar':'index','post':post,'school_profile':school_profile})
+    return render(request,'app/index.html',{'user':user,'profile':profile,'navbar':'index','posts':post,'school_profile':school_profile})
 
 def home(request):
 

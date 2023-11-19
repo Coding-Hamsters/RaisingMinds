@@ -30,7 +30,7 @@
                 <form method="post">
                     {% csrf_token %}
                     <div class=" p-2  main" >
-                    <h4 class="text-center mb-4">Donate for Lab Royal Collage 
+                    <h4 class="text-center mb-4">Donate for {{post.author.school_name}}
                         </h4>
                      <div>
                          <img class="" src="{{post.post_image.url}}" alt="post image" width="90%"/>

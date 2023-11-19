@@ -231,15 +231,15 @@
 
             <div class="row">
 
-              {% for post in post %}
-
+              {% for post in posts|slice:":3" %}
+                {% if post.is_approved %}
               <div class="col-lg-4 col-md-6 d-flex align-items-stretch" data-aos="zoom-in" data-aos-delay="100">
                 <div class="icon-box">
                   <div class="project-image">
-                    <img src="{% static "app/images/school.jpg" %}">
+                    <img src="{{post.post_image.url}}">
                   </div>
                   <h4><a href="">{{post.author.school_name}}</a></h4>
-                  <p>Bogaswewa Samadhi Montessori with nearly 28 children had no place to learn.</p>
+                  {% comment %} <p>Bogaswewa Samadhi Montessori with nearly 28 children had no place to learn.</p> {% endcomment %}
                   <div class="progressbar">
                     <h4>Progress</h4>
                     <div class="progress">
@@ -249,16 +249,20 @@
                     </div>
                     <div class="row">
                       <div class="col-sm-6">
-                          <p>Goal : LKR {{post.donate_amount}}</p>
+                          <p>Goal : USD {{post.donate_amount}}</p>
                       </div>
                       <div class="col-sm-6">
-                          <p>Current : LKR {{post.current_amount}}</p>
+                          <p>Current : USD {{post.current_amount}}</p>
                       </div>
                   </div>
-                  <button type="button" class="btn donate btn-outline-primary">Donate</button>
+                  <button type="button" class="btn donate btn-outline-primary" 
+                    onclick="window.location.href='{% if user.is_authenticated %}{% url 'community' %}{% else %}{% url 'login' %}{% endif %}'">
+                    Donate
+                  </button>
                 </div>
                 </div>
               </div>
+                {% endif %}
 
               {% endfor %}
               

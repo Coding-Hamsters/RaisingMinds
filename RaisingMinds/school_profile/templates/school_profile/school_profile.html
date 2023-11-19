@@ -173,16 +173,16 @@
                             </div>
                             <div class="row">
                               <div class="col-sm-6 mt-1">
-                                  <p>Goal : $ {{post.donate_amount}}</p>
+                                  <p>Goal : USD {{post.donate_amount}}</p>
                               </div>
                               <div class="col-sm-6 mt-1">
-                                  <p>Current : LKR {{post.current_amount}}</p>
+                                  <p>Current : USD {{post.current_amount}}</p>
                               </div>
                           </div>
                           <div  class="text-center">
                             <button type="button" class="btn donate btn-outline-primary mb-3" onclick="window.location.href='{% url 'checkout' post.id %}'"
                             {% if post.donate_amount <= post.current_amount %}disabled{% endif %} >
-                            Donate
+                            {% if post.donate_amount <= post.current_amount %}Completed{% else %}Donate{% endif %}
                         </button>
                           </div>
                           
