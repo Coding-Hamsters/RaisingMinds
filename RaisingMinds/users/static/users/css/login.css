@@ -28,10 +28,19 @@ a {
     padding-left: 15px;
     margin-right: auto;
     margin-left: auto; }
-    
+ 
+    @media(min-width:330px){
+        .loginForm  {
+            max-width: 350px;
+           }
+           .col-sm-6 a{
+               margin-left: 5px;
+           }
+    }
+
     @media (min-width: 576px) {
         .loginForm  
-      {max-width: 540px;
+      {max-width: 400px;
          }
      }
     @media (min-width: 768px) {
