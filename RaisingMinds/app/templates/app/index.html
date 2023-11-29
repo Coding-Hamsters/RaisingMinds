@@ -63,16 +63,18 @@
                                   <li><hr class="dropdown-divider"></li>
                                   {% if user.schoolprofile %}
                                     {% if user.schoolprofile.is_verified %}
-                                    <li><a class="dropdown-item" href="{% url 'schoolprofile' school_profile.pk %}"><i class="fas fa-cog fa-fw"></i>School Profile</a></li>
+                                    <li><a class="dropdown-item" href="{% url 'schoolprofile' school_profile.pk %}"><i class="fas fa-cog fa-fw"></i> School Profile</a></li>
                                     {% else %}
-                                    <li><a class="dropdown-item" href="{% url 'index'%}"><i class="fas fa-cog fa-fw"></i>Pending School Profile</a></li>
+                                    <li><a class="dropdown-item" href="{% url 'index'%}"><i class="fas fa-cog fa-fw"></i> Pending School Profile</a></li>
                                     {% endif %}
                                   {% else %}
                                   <li><a class="dropdown-item" href="{% url 'schoolprofilecreate' %}"><i class="fas fa-cog fa-fw"></i> Create School Profile</a></li>
                                   {% endif %}
                                   <li><hr class="dropdown-divider"></li>
                                   {% if user.is_superuser %}
-                                  <li><a class="dropdown-item" href="{% url 'admin:index' %}"><i class="fas fa-sign-out-alt fa-fw"></i> Admin Pannel</a></li>
+                                  <li><a class="dropdown-item" href="{% url 'admin:index' %}"><i class="fas fa-user-lock fa-fw"></i> Admin Pannel</a></li>
+                                  <li><hr class="dropdown-divider"></li>
+                                  <li><a class="dropdown-item" href="#"><i class="fas fa-sign-out-alt fa-fw"></i> Log Out</a></li>
                                   {% else %}
                                   {% endif %}
                                 </ul>
