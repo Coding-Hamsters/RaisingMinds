@@ -453,7 +453,7 @@ section {
   overflow: hidden;
 }
 
-.team .member .social {
+/* .team .member .social {
   position: absolute;
   left: 0;
   bottom: 0;
@@ -483,7 +483,7 @@ section {
   font-size: 18px;
   margin: 0 2px;
   line-height: 0;
-}
+} */
 
 .team .member .member-info {
   padding: 25px 15px;
@@ -645,16 +645,6 @@ section {
 
 .contact .php-email-form button[type=submit]:hover {
   background: #3194db;
-}
-
-@keyframes animate-loading {
-  0% {
-    transform: rotate(0deg);
-  }
-
-  100% {
-    transform: rotate(360deg);
-  }
 }
 
 /*--------------------------------------------------------------

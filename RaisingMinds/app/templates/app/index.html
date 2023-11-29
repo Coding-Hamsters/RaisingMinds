@@ -5,8 +5,11 @@
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>Raising Minds{% block title%}{% endblock %}</title>
-        
+
+        <!-- Bootstrap CDN -->
         <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" />
+
+        <!-- Font Awesome -->
         <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" rel="stylesheet" />
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" />
 
@@ -89,7 +92,7 @@
 
         <!-- Hero Section -->
         <section id="hero" class="d-flex align-items-center">
-            <div class="container" data-aos="zoom-out" data-aos-delay="100">
+            <div class="container">
                 <h1>Welcome to <span>Raising Minds </span></h1>
                 <h2>Join us in building a brighter future through your generous donations.</h2>
                 {% if user.is_authenticated %}
@@ -106,7 +109,7 @@
 
         <!-- Box Section -->
         <section id="box" class="d-flex align-items-center">
-        <div class="container position-relative" data-aos="fade-up" data-aos-delay="100">
+        <div class="container position-relative">
           <div class="row icon-boxes">
             <div class="col-md-6 col-lg-3 d-flex align-items-stretch mb-5 mb-lg-0" data-aos="zoom-in" data-aos-delay="200">
               <div class="icon-box">
@@ -146,7 +149,7 @@
 
         <!-- About Section -->
         <section id="about" class="about">
-          <div class="container" data-aos="fade-up">
+          <div class="container">
     
             <div class="section-title">
               <h2>About Us</h2>
@@ -218,7 +221,7 @@
 
           
 
-          <div class="container" data-aos="fade-up">
+          <div class="container">
 
             <div class="section-title">
               <h2>Ongoing Projects</h2>
@@ -327,7 +330,7 @@
 
         <!-- Team Section -->
       <section id="team" class="team section-bg">
-        <div class="container" data-aos="fade-up">
+        <div class="container">
 
           <div class="section-title">
             <h2>Team</h2>
@@ -336,53 +339,35 @@
 
           <div class="row">
 
-            <div class="col-lg-3 col-md-6 d-flex align-items-stretch" data-aos="fade-up" data-aos-delay="100">
+            <div class="col-lg-3 col-md-6 d-flex align-items-stretch">
               <div class="member">
                 <div class="member-img">
                   <img src="{% static "app/images/profile-pic (1).png" %}" class="img-fluid" alt="">
-                  <div class="social">
-                    <a href="https://github.com/DulithaHarasara"><i class="fa fa-github"></i></a>
-                    <a href="https://www.facebook.com/dulitha.harasara"><i class="fa fa-facebook"></i>
-                    <a href="https://www.linkedin.com/in/dulitha-harasara-40b93322b/"><i class="fa fa-linkedin"></i></a>
-                  </div>
                 </div>
                 <div class="member-info">
                   <h4>Dulitha Harasara</h4>
-                  <span>Chief Executive Officer</span>
                 </div>
               </div>
             </div>
 
-            <div class="col-lg-3 col-md-6 d-flex align-items-stretch" data-aos="fade-up" data-aos-delay="200">
+            <div class="col-lg-3 col-md-6 d-flex align-items-stretch">
               <div class="member">
                 <div class="member-img">
                   <img src="{% static "app/images/profile-pic (2).png" %}" class="img-fluid" alt="">
-                  <div class="social">
-                    <a href="https://github.com/Malmi-Ameesha"><i class="fa fa-github"></i></a>
-                    <a href="https://www.facebook.com/malmi.ameesha.96?mibextid=PzaGJu"><i class="fa fa-facebook"></i></a>
-                    <a href="http://linkedin.com/in/malmee-ameesha-944b1022b"><i class="fa fa-linkedin"></i></a>
-                  </div>
                 </div>
                 <div class="member-info">
                   <h4>Malmi Ameesha</h4>
-                  <span>Product Manager</span>
                 </div>
               </div>
             </div>
 
-            <div class="col-lg-3 col-md-6 d-flex align-items-stretch" data-aos="fade-up" data-aos-delay="300">
+            <div class="col-lg-3 col-md-6 d-flex align-items-stretch">
               <div class="member">
                 <div class="member-img">
                   <img src="{% static "app/images/profile-pic.png" %}" class="img-fluid" alt="">
-                  <div class="social">
-                    <a href="https://github.com/MGKShavinda"><i class="fa fa-github"></i></a>
-                    <a href="https://www.facebook.com/kavindu.shavinda.10"><i class="fa fa-facebook"></i></a>
-                    <a href="https://www.linkedin.com/in/mgkshavinda/"><i class="fa fa-linkedin"></i></a>
-                  </div>
                 </div>
                 <div class="member-info">
                   <h4>Kavindu Shavinda</h4>
-                  <span>CTO</span>
                 </div>
               </div>
             </div>
@@ -391,15 +376,9 @@
               <div class="member">
                 <div class="member-img">
                   <img src="{% static "app/images/profile-pic (3).png" %}" class="img-fluid" alt="">
-                  <div class="social">
-                    <a href="https://github.com/HeshithaSandeepa"><i class="fa fa-github"></i></a>
-                    <a href="https://www.facebook.com/heshitha.sandeepa.750/"><i class="fa fa-facebook"></i></a>
-                    <a href="https://www.linkedin.com/in/heshitha-sandeepa-8a225b24a/"><i class="fa fa-linkedin"></i></a>
-                  </div>
                 </div>
                 <div class="member-info">
                   <h4>Heshitha Sandeepa</h4>
-                  <span>Accountant</span>
                 </div>
               </div>
             </div>
@@ -411,7 +390,7 @@
 
         <!-- Contact Section -->
         <section id="contact" class="contact">
-          <div class="container" data-aos="fade-up">
+          <div class="container">
 
             <div class="section-title">
               <h2>Contact</h2>
@@ -531,13 +510,14 @@
               </div>
             </div>
           </div>
-      {% endblock %}
+        {% endblock %}
 
-        <!-- Main JS File -->
-        <script src="{% static 'app/js/main.js' %}"></script>
-        <!-- bootstrap JS CDN link -->
-        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script> 
-        </body>
+          <!-- Main JS File -->
+          <script src="{% static 'app/js/main.js' %}"></script>
+
+          <!-- bootstrap JS CDN link -->
+          <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script> 
+      </body>
 
     
 </html>

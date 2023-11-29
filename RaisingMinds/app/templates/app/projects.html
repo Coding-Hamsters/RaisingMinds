@@ -13,232 +13,142 @@
 
     <!-- Hero Section -->
     <section id="hero" class="d-flex align-items-center">
-        <div class="container" data-aos="zoom-out" data-aos-delay="100">
+        <div class="container" data-aos="zoom-out">
             <h1><span>Raising Minds </span> Projects</h1>
             <h2>Explore the impact of our commitment to education</h2>
             <div class="d-flex">
-              <a href="#ongoing" class="btn-get-started">Ongoing Projects</a> &nbsp;&nbsp;
               <a href="#completed" class="btn-get-started">Completed Projects</a>
             </div>
         </div>        
     </section>
     <!--End of Hero Section -->
 
-    <!-- Ongoing Projects Section -->
-    <section class="projects" id="ongoing" class="projects section-bg">
-        <div class="container" data-aos="fade-up">
+    <!-- Completed Projects Section -->
+    <section class="projects" id="completed" class="projects section-bg">
+      <div class="container">
 
-          <div class="section-title">
-            <h2>Ongoing Projects</h2>
-            <p>Embark on a journey with us as we forge ahead with passion and dedication in our ongoing projects, working tirelessly to bring positive change and elevate the educational landscape for future generations.</p>
-          </div>
-
-          <div class="row">
-            <div class="col-lg-4 col-md-6 d-flex align-items-stretch" data-aos="zoom-in" data-aos-delay="100">
-              <div class="icon-box">
-                <div class="project-image">
-                  <img src="{% static "app/images/school.jpg" %}">
-                </div>
-                <h4><a href="">Montessori in Kakirewa</a></h4>
-                <p>Bogaswewa Samadhi Montessori with nearly 28 children had no place to learn.</p>
-                <div class="progressbar">
-                  <h4>Progress</h4>
-                  <div class="progress">
-                    <div class="progress-bar" role="progressbar" style="width: 25%;" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100">25%</div>
-                  </div>
-                  <div class="row">
-                    <div class="col-sm-6">
-                        <p>Goal : LKR 100000</p>
-                    </div>
-                    <div class="col-sm-6">
-                        <p>Current : LKR 35,000</p>
-                    </div>
-                </div>
-                <button type="button" class="btn donate btn-outline-primary">Donate</button>
-              </div>
-              </div>
-            </div>
-
-            <div class="col-lg-4 col-md-6 d-flex align-items-stretch mt-4 mt-md-0" data-aos="zoom-in" data-aos-delay="200">
-              <div class="icon-box">
-                <div class="project-image">
-                  <img src="{% static "app/images/school.jpg" %}">
-                </div>
-                <h4><a href="">Ukwatta Maha Vidyalaya</a></h4>
-                <p>Rebuilding the Drinking water supply and collecting funds for a Science Lab.</p>
-                <div class="progressbar">
-                  <h4>Progress</h4>
-                  <div class="progress">
-                    <div class="progress-bar" role="progressbar" style="width: 25%;" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100">25%</div>
-                  </div>
-                  <div class="row">
-                    <div class="col-sm-6">
-                        <p>Goal : LKR 100000</p>
-                    </div>
-                    <div class="col-sm-6">
-                        <p>Current : LKR 50,000</p>
-                    </div>
-                </div>
-                <button type="button" class="btn donate btn-outline-primary">Donate</button>
-              </div>
-              </div>
-            </div>
-
-            <div class="col-lg-4 col-md-6 d-flex align-items-stretch mt-4 mt-lg-0" data-aos="zoom-in" data-aos-delay="300">
-              <div class="icon-box">
-                <div class="project-image">
-                  <img src="{% static "app/images/school.jpg" %}">
-                </div>
-                <h4><a href="">Meegoda Kanishta Vidyalaya (Primary School)</a></h4>
-                <p>Collecting funds for a Computer Lab.</p>
-                <div class="progressbar">
-                  <h4>Progress</h4>
-                  <div class="progress">
-                    <div class="progress-bar" role="progressbar" style="width: 25%;" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100">25%</div>
-                  </div>
-                  <div class="row">
-                    <div class="col-sm-6">
-                        <p>Goal : LKR 100000</p>
-                    </div>
-                    <div class="col-sm-6">
-                        <p>Current : LKR 25,000</p>
-                    </div>
-                </div>
-                <button type="button" class="btn donate btn-outline-primary">Donate</button>
-              </div>
-              </div>
-            </div>
-          </div>
-
+        <div class="section-title">
+          <h2>Completed Projects</h2>
+          <p>Witness the tangible results of our collective efforts in education, as we proudly present a gallery of successfully completed projects that have enriched the learning experience for countless students.</p>
         </div>
-      </section><!-- End Ongoing Projects Section -->
 
-      <!-- Completed Projects Section -->
-      <section class="projects" id="completed" class="projects section-bg">
-        <div class="container" data-aos="fade-up">
-
-          <div class="section-title">
-            <h2>Completed Projects</h2>
-            <p>Witness the tangible results of our collective efforts in education, as we proudly present a gallery of successfully completed projects that have enriched the learning experience for countless students.</p>
+        <div class="row">
+          {% for post in posts %}
+          {% if post.is_approved %}
+          {% if post.donate_amount <= post.current_amount %}
+          <div class="col-lg-4 col-md-6 d-flex align-items-stretch" data-aos="zoom-in" data-aos-delay="100">
+            <div class="icon-box">
+              <div class="project-image">
+                <img src="{{post.post_image.url}}">
+              </div>
+              <h4><a href="">{{post.author.school_name}}</a></h4>
+              <p>{{post.title}}</p>
+              <div class="progressbar">
+                <h4>Progress</h4>
+                <div class="progress">
+                  <div class="progress-bar bg-success" role="progressbar" style="width: 100%;" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100">100%</div>
+                </div>
+                <p class="donate-text text-center">Goal : USD {{post.donate_amount}}</p>
+                <p class="donate-text text-center">Completed</p>
+              </div>
+              </div>
+              
           </div>
+          {% endif %}
+          {% endif %}
+          {% endfor %}
 
-          <div class="row">
-            {% for post in posts %}
-            {% if post.is_approved %}
-            {% if post.donate_amount <= post.current_amount %}
-            <div class="col-lg-4 col-md-6 d-flex align-items-stretch" data-aos="zoom-in" data-aos-delay="100">
-              <div class="icon-box">
-                <div class="project-image">
-                  <img src="{{post.post_image.url}}">
+          {% comment %} <div class="col-lg-4 col-md-6 d-flex align-items-stretch mt-4 mt-md-0">
+            <div class="icon-box">
+              <div class="project-image">
+                <img src="{% static "app/images/school.jpg" %}">
+              </div>
+              <h4><a href="">Glenanore Tamil maha Vidyalayam</a></h4>
+              <p>Collecting funds for a Computer Lab.</p>
+              <div class="progressbar">
+                <h4>Progress</h4>
+                <div class="progress">
+                  <div class="progress-bar bg-success" role="progressbar" style="width: 100%;" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100">100%</div>
                 </div>
-                <h4><a href="">{{post.author.school_name}}</a></h4>
-                <p>{{post.title}}</p>
-                <div class="progressbar">
-                  <h4>Progress</h4>
-                  <div class="progress">
-                    <div class="progress-bar bg-success" role="progressbar" style="width: 100%;" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100">100%</div>
-                  </div>
-                  <p class="donate-text text-center">Goal : USD {{post.donate_amount}}</p>
-                  <p class="donate-text text-center">Completed</p>
-                </div>
-                </div>
-                
+                <p class="donate-text text-center">Goal : LKR 100000</p>
+                <p class="donate-text text-center">Completed</p>
+              </div>
             </div>
-            {% endif %}
-            {% endif %}
-            {% endfor %}
+          </div> {% endcomment %}
 
-            {% comment %} <div class="col-lg-4 col-md-6 d-flex align-items-stretch mt-4 mt-md-0" data-aos="zoom-in" data-aos-delay="200">
-              <div class="icon-box">
-                <div class="project-image">
-                  <img src="{% static "app/images/school.jpg" %}">
-                </div>
-                <h4><a href="">Glenanore Tamil maha Vidyalayam</a></h4>
-                <p>Collecting funds for a Computer Lab.</p>
-                <div class="progressbar">
-                  <h4>Progress</h4>
-                  <div class="progress">
-                    <div class="progress-bar bg-success" role="progressbar" style="width: 100%;" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100">100%</div>
-                  </div>
-                  <p class="donate-text text-center">Goal : LKR 100000</p>
-                  <p class="donate-text text-center">Completed</p>
-                </div>
+          {% comment %} <div class="col-lg-4 col-md-6 d-flex align-items-stretch mt-4 mt-lg-0">
+            <div class="icon-box">
+              <div class="project-image">
+                <img src="{% static "app/images/school.jpg" %}">
               </div>
-            </div> {% endcomment %}
+              <h4><a href="">Montessori in Horowpathana</a></h4>
+              <p>Rebuilding the Drinking water supply and collecting funds for a Playground.</p>
+              <div class="progressbar">
+                <h4>Progress</h4>
+                <div class="progress">
+                  <div class="progress-bar bg-success" role="progressbar" style="width: 100%;" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100">100%</div>
+                </div>
+                <p class="donate-text text-center">Goal : LKR 100000</p>
+                <p class="donate-text text-center">Completed</p>
+              </div>
+            </div>
+          </div> {% endcomment %}
 
-            {% comment %} <div class="col-lg-4 col-md-6 d-flex align-items-stretch mt-4 mt-lg-0" data-aos="zoom-in" data-aos-delay="300">
-              <div class="icon-box">
-                <div class="project-image">
-                  <img src="{% static "app/images/school.jpg" %}">
-                </div>
-                <h4><a href="">Montessori in Horowpathana</a></h4>
-                <p>Rebuilding the Drinking water supply and collecting funds for a Playground.</p>
-                <div class="progressbar">
-                  <h4>Progress</h4>
-                  <div class="progress">
-                    <div class="progress-bar bg-success" role="progressbar" style="width: 100%;" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100">100%</div>
-                  </div>
-                  <p class="donate-text text-center">Goal : LKR 100000</p>
-                  <p class="donate-text text-center">Completed</p>
-                </div>
+          {% comment %} <div class="col-lg-4 col-md-6 d-flex align-items-stretch mt-4">
+            <div class="icon-box">
+              <div class="project-image">
+                <img src="{% static "app/images/school.jpg" %}">
               </div>
-            </div> {% endcomment %}
+              <h4><a href="">Hindu Vidyalaya - Matale</a></h4>
+              <p>Rebuilding the Drinking water supply and collecting funds for a Science Lab.</p>
+              <div class="progressbar">
+                <h4>Progress</h4>
+                <div class="progress">
+                  <div class="progress-bar bg-success" role="progressbar" style="width: 100%;" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100">100%</div>
+                </div>
+                <p class="donate-text text-center">Goal : LKR 100000</p>
+                <p class="donate-text text-center">Completed</p>
+              </div>
+            </div>
+          </div> {% endcomment %}
 
-            {% comment %} <div class="col-lg-4 col-md-6 d-flex align-items-stretch mt-4" data-aos="zoom-in" data-aos-delay="100">
-              <div class="icon-box">
-                <div class="project-image">
-                  <img src="{% static "app/images/school.jpg" %}">
-                </div>
-                <h4><a href="">Hindu Vidyalaya - Matale</a></h4>
-                <p>Rebuilding the Drinking water supply and collecting funds for a Science Lab.</p>
-                <div class="progressbar">
-                  <h4>Progress</h4>
-                  <div class="progress">
-                    <div class="progress-bar bg-success" role="progressbar" style="width: 100%;" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100">100%</div>
-                  </div>
-                  <p class="donate-text text-center">Goal : LKR 100000</p>
-                  <p class="donate-text text-center">Completed</p>
-                </div>
+          {% comment %} <div class="col-lg-4 col-md-6 d-flex align-items-stretch mt-4">
+            <div class="icon-box">
+              <div class="project-image">
+                <img src="{% static "app/images/school.jpg" %}">
               </div>
-            </div> {% endcomment %}
+              <h4><a href="">Kasbawewa Kanishta Vidyalaya</a></h4>
+              <p>Rebuilding the Drinking water supply and collecting funds for a Science Lab.</p>
+              <div class="progressbar">
+                <h4>Progress</h4>
+                <div class="progress">
+                  <div class="progress-bar bg-success" role="progressbar" style="width: 100%;" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100">100%</div>
+                </div>
+                <p class="donate-text text-center">Goal : LKR 100000</p>
+                <p class="donate-text text-center">Completed</p>
+              </div>
+            </div>
+          </div> {% endcomment %}
 
-            {% comment %} <div class="col-lg-4 col-md-6 d-flex align-items-stretch mt-4" data-aos="zoom-in" data-aos-delay="200">
-              <div class="icon-box">
-                <div class="project-image">
-                  <img src="{% static "app/images/school.jpg" %}">
-                </div>
-                <h4><a href="">Kasbawewa Kanishta Vidyalaya</a></h4>
-                <p>Rebuilding the Drinking water supply and collecting funds for a Science Lab.</p>
-                <div class="progressbar">
-                  <h4>Progress</h4>
-                  <div class="progress">
-                    <div class="progress-bar bg-success" role="progressbar" style="width: 100%;" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100">100%</div>
-                  </div>
-                  <p class="donate-text text-center">Goal : LKR 100000</p>
-                  <p class="donate-text text-center">Completed</p>
-                </div>
+          {% comment %} <div class="col-lg-4 col-md-6 d-flex align-items-stretch mt-4">
+            <div class="icon-box">
+              <div class="project-image">
+                <img src="{% static "app/images/school.jpg" %}">
               </div>
-            </div> {% endcomment %}
-
-            {% comment %} <div class="col-lg-4 col-md-6 d-flex align-items-stretch mt-4" data-aos="zoom-in" data-aos-delay="300">
-              <div class="icon-box">
-                <div class="project-image">
-                  <img src="{% static "app/images/school.jpg" %}">
+              <h4><a href="">Madagama Royal College</a></h4>
+              <p>Rebuilding the Drinking water supply and collecting funds for a Science Lab.</p>
+              <div class="progressbar">
+                <h4>Progress</h4>
+                <div class="progress">
+                  <div class="progress-bar bg-success" role="progressbar" style="width: 100%;" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100">100%</div>
                 </div>
-                <h4><a href="">Madagama Royal College</a></h4>
-                <p>Rebuilding the Drinking water supply and collecting funds for a Science Lab.</p>
-                <div class="progressbar">
-                  <h4>Progress</h4>
-                  <div class="progress">
-                    <div class="progress-bar bg-success" role="progressbar" style="width: 100%;" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100">100%</div>
-                  </div>
-                  <p class="donate-text text-center">Goal : LKR 100000</p>
-                  <p class="donate-text text-center">Completed</p>
-                </div>
+                <p class="donate-text text-center">Goal : LKR 100000</p>
+                <p class="donate-text text-center">Completed</p>
               </div>
-            </div> {% endcomment %}
-          </div>
+            </div>
+          </div> {% endcomment %}
         </div>
-      </section><!-- End Completed Projects Section -->
+      </div>
+    </section><!-- End Completed Projects Section -->
 
 {% endblock %}
