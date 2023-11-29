@@ -4,8 +4,10 @@ from django.conf import settings
 import uuid
 from django.urls import reverse
 from paypal.standard.forms import PayPalPaymentsForm
+from django.contrib.auth.decorators import login_required
 
 # Create your views here.
+@login_required(login_url='login')
 def checkout(request,post_id):
 
     post = Post.objects.get(id = post_id)
@@ -42,6 +44,7 @@ def checkout(request,post_id):
 
     return render(request,'payments/payment_checkout.html',{'post':post,'paypal':paypal_donation,'donate':donate_amount1})
 
+@login_required(login_url='login')
 def paymentSuccess(request,post_id):
 
     post = Post.objects.get(id = post_id)
@@ -67,6 +70,7 @@ def paymentSuccess(request,post_id):
 
     return render(request,'payments/payment_success.html',{'post':post})
 
+@login_required(login_url='login')
 def paymentFail(request,post_id):
 
     post = Post.objects.get(id = post_id)

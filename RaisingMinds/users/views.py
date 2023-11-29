@@ -30,6 +30,7 @@ def signup(request):
                 return HttpResponse('<h1>Email is Already Exists</h1>')
             
             else:
+                # create a new user
                 newUser = User.objects.create_user(email,username,password1)
                 newUser.is_active = False
                 newUser.save()
@@ -50,6 +51,7 @@ def signup(request):
 
                 })
 
+                # set up email body
                 email = EmailMessage(
                     subject,
                     message,
@@ -58,6 +60,7 @@ def signup(request):
 
                 )
 
+                # send the confimation email
                 email.send()
 
                 return HttpResponse('<h1>We Send You a Confirmation Email</h1>')
@@ -70,6 +73,7 @@ def login(request):
         email = request.POST.get('email')
         password1 = request.POST.get('password1')
 
+        # authenticate user
         user = authenticate(request,email = email,password = password1)   
 
         if user is not None:

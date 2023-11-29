@@ -3,9 +3,11 @@ from django.http import HttpResponse
 from user_profile.models import Profile
 from .models import schoolProfile
 from post.models import Post
+from django.contrib.auth.decorators import login_required
 
 # Create your views here.
 # method for render school_profile.html
+@login_required(login_url='login')
 def schoolprofile(request,pk):
 
     # get current authenticated user
@@ -56,7 +58,9 @@ def schoolprofile(request,pk):
     
 
     return render(request,'school_profile/school_profile.html',context)
+
 # method for create new school profile
+@login_required(login_url='login')
 def createSchoolProfile(request):
 
     user = request.user

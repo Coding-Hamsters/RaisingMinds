@@ -2,8 +2,10 @@ from django.shortcuts import render
 from user_profile.models import Profile
 from school_profile.models import schoolProfile
 from .models import Post
+from django.contrib.auth.decorators import login_required
 
 # Create your views here.
+@login_required(login_url='login')
 def community(request):
 
      # get current authenticated user
