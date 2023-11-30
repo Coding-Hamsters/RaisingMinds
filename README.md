@@ -57,23 +57,31 @@ Web browser (Chrome, Firefox, Safari, etc.)
    ```sh
    https://github.com/your-username/school-donation-web-app.
    ```
-2. git Change directory to the project folder:
+2. Create Virtual Environment for the project:
+   ```sh
+   py -m venv virualenv(named as you like)
+   ```
+3. Install python dependencies for your project:
+    ```sh
+   pip install django
+   ```
+4. git Change directory to the project folder:
    ```sh
    cd school-donation-web-app
    ```
-3. Install Python dependencies using pip (it's recommended to use a virtual environment):
-   ```sh
-   pip install -r requirements.txt
-   ```
-4. Apply database migrations:
+5. Apply database migrations:
    ```sh
    python manage.py migrate
    ```
-5. Start the Django development server:
+6. Apply paypal Dependencies for the project:
+   ```sh
+   pip install django-paypal
+   ```
+7. Start the Django development server:
    ```sh
    python manage.py runserver
    ```
-6. Access the application in your web browser at:
+8. Access the application in your web browser at:
    ```sh
     http://localhost:8000.
    Explore the donation platform, view schools, make donations, and manage the application through the admin panel at http://localhost:8000/admin.
