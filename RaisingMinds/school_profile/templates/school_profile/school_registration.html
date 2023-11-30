@@ -89,7 +89,7 @@
 
   <div class="row justify-content-center formStyle">
     <div class="col-md-5 ">
-      <form class="container" method="post" enctype="multipart/form-data">
+      <form class="container needs-validation" method="post" enctype="multipart/form-data" novalidate>
         {% csrf_token %}
         <div class="fotmStyle2">
           <h2 class="text-center mb-4">School Registration Form</h2>
@@ -109,6 +109,9 @@
             <div class="form-group col">
               <label for="Email1" class="mb-1">School Email address:</label>
               <input type="email" class="form-control" id="Email1" placeholder="Enter email" required name="schoolEmail">
+              <div class="invalid-feedback">
+                please enter valid email address.
+              </div>
             </div>
           </div>
           <div class="row mb-2">
@@ -133,8 +136,8 @@
 
             <div class="form-group col mb-2">
               <label for="Select" selected class="mb-1">School Type:</label>
-              <select class="form-control" id="Select" required name="schoolType">
-                <option selected>Select Your School Type</option>
+              <select class="form-select" id="Select"name="schoolType" required>
+                <option selected disabled value="" >Select School Type</option>
                 <option>Mixed School</option>
                 <option>Boys School</option>
                 <option>Girls School</option>
@@ -149,20 +152,24 @@
               name="schoolAddress"></textarea>
           </div>
           <div class="form-group mb-3">
-            <label for="Textarea1" class="mb-1">Description:</label>
+            <label for="Textarea1" class="mb-1">Description(Optional):</label>
             <textarea class="form-control" id="Textarea1" rows="3" placeholder="Enter your text here..." name="description"></textarea>
           </div>
           <div class="row">
 
             <div class="form-group mb-2 col">
               <label for="File1"> Verification document :</label>
-              <input type="file" class="form-control-file" id="File1" accept="application/pdf"name="verificationDoc">
-
+              <input type="file" class="form-control-file" id="File1" accept="application/pdf"name="verificationDoc"required>
+              <div class="invalid-feedback">
+                please add school Verification documnet.
+              </div>
             </div>
             <div class="form-group mb-3 col imageP">
               <label for="image">School profile picture : </label>
-              <input type="File" class="form-control-file2" id="image" accept="image/jpeg,image/png,image/jpg," name="schoolProfileImage">
-
+              <input type="File" class="form-control-file2" id="image" accept="image/jpeg,image/png,image/jpg," name="schoolProfileImage" required>
+              <div class="invalid-feedback">
+                please add school profile image.
+              </div>
 
             </div>
            
@@ -263,6 +270,7 @@
     </div>
   </div>
   <br><br>
+  <script src="{% static 'school_profile/js/school_registration.js'%}"></script>
 
   <!-- bootstrap javascript link -->
   {% comment %} <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
