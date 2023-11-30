@@ -12,7 +12,7 @@ def index(request):
     # get current authenticated user
     user = request.user
     # get all post in Post model
-    post = Post.objects.all()
+    post = Post.objects.all().order_by('date_posted')
     
     try:
         # get the current user's profile
@@ -42,9 +42,15 @@ def index(request):
         message = Messages.objects.create(name = name,email = email, subject = subject, message = message)
         message.save()
 
-        
+    context = {
+        'user':user,
+        'profile':profile,
+        'navbar':'index',
+        'posts': post,
+        'school_profile':school_profile
+        }
 
-    return render(request,'app/index.html',{'user':user,'profile':profile,'navbar':'index','posts':post,'school_profile':school_profile})
+    return render(request,'app/index.html',context)
 
 def home(request):
 
