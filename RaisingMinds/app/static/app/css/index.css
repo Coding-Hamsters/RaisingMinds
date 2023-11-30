@@ -604,6 +604,13 @@ section {
   background: #3194db;
 }
 
+/* ---------- Q & A Section ---------- */
+
+.qna .qna-collapse {
+  margin-left: 0 40px;
+  padding-left: 50px
+}
+
 /* ---------- Footer ---------- */
 
 #footer {
