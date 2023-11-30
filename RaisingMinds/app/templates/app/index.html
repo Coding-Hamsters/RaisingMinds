@@ -41,11 +41,10 @@
             <!-- Nav -->
             <div class="navbar-nav mx-lg-auto">
                 <a class="nav-item nav-link {% if navbar == 'index' %}active {% endif %}" href="{% url 'index' %}" aria-current="page">Home</a>
-                <a class="nav-item nav-link" href="#about">About</a>
+                <a class="nav-item nav-link" href="{% url 'index' %}#about">About</a>
                 <a class="nav-item nav-link {% if navbar == 'projects' %} active {% endif %}" href="{% url 'projects' %}">Projects</a>
-                <!-- <a class="nav-item nav-link" href="#">Features</a> -->
-                <a class="nav-item nav-link" href="#team">Team</a>
-                <a class="nav-item nav-link" href="#contact">Contact</a>
+                <a class="nav-item nav-link" href="{% url 'index' %}#team">Team</a>
+                <a class="nav-item nav-link" href="{% url 'index' %}#contact">Contact</a>
                 {% if user.is_authenticated %}
                 <a class="nav-item nav-link {% if navbar == 'community' %} active {% endif %}" href="{% url 'community' %}">Community</a>
                 {% else %}
@@ -193,21 +192,21 @@
     
               <div class="col-lg-3 col-md-5 col-6 d-md-flex align-items-md-stretch">
                 <div class="countbox">
-                  <h1 class="count" data-target="140">0</h1>
+                  <h1 class="count" data-target="500">0</h1>
                   <p>Projects Completed</p>
                 </div>
               </div>
     
               <div class="col-lg-3 col-md-5 col-6 d-md-flex align-items-md-stretch">
                 <div class="countbox">
-                  <h1 class="count" data-target="100">0</h1>
+                  <h1 class="count" data-target="400">0</h1>
                   <p>Schools Helped</p>
                 </div>
               </div>
     
               <div class="col-lg-3 col-md-5 col-6 d-md-flex align-items-md-stretch">
                 <div class="countbox">
-                  <h1 class="count" data-target="450">0</h1>
+                  <h1 class="count" data-target="1000">0</h1>
                   <p>Toal Funds Raised</p>
                 </div>
               </div>

@@ -1,6 +1,6 @@
 // Count Section
 const counts = document.querySelectorAll('.count');
-const speed = 50;
+const speed = 200;
 
 function updateCountsOnScroll() {
   counts.forEach((countbox) => {
@@ -13,7 +13,7 @@ function updateCountsOnScroll() {
     if (rect.top < window.innerHeight - offset) {
       if (count < target) {
         countbox.innerText = Math.floor(inc + count);
-        setTimeout(updateCountsOnScroll, 130);
+        setTimeout(updateCountsOnScroll, 200);
       } else {
         countbox.innerText = target;
       }
