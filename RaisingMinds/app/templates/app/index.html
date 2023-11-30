@@ -45,6 +45,7 @@
                 <a class="nav-item nav-link {% if navbar == 'projects' %} active {% endif %}" href="{% url 'projects' %}">Projects</a>
                 <a class="nav-item nav-link" href="{% url 'index' %}#team">Team</a>
                 <a class="nav-item nav-link" href="{% url 'index' %}#contact">Contact</a>
+                <a class="nav-item nav-link" href="{% url 'index' %}#qna">Q&A</a>
                 {% if user.is_authenticated %}
                 <a class="nav-item nav-link {% if navbar == 'community' %} active {% endif %}" href="{% url 'community' %}">Community</a>
                 {% else %}
@@ -459,9 +460,9 @@
               <h2>Q & A</h2>
               <p>Explore our Q&A section for insights into our mission, projects, and how you can be a part of the transformative journey toward a brighter future in education.</p>
             </div>
-            <div class="qna-collapse d-flex align-items-center" >
+            <div class="qna-collapse" >
 
-              <p qna-collapse>
+              <p>
                 <button class="btn btn-primary" type="button" data-bs-toggle="collapse" data-bs-target="#collapseExample" aria-expanded="false" aria-controls="collapseExample">
                   Request Donation
                 </button>
