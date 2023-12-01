@@ -18,7 +18,7 @@ a {
     text-decoration: none;
 }
 
-.ftco-section {
+.main-section {
     padding: 2.5em 0; 
 }
 
@@ -28,6 +28,10 @@ a {
     padding-left: 15px;
     margin-right: auto;
     margin-left: auto; }
+
+    /* ***********************************************************************
+                                 Media Query
+    **************************************************************************/
  
     @media(min-width:330px){
         .loginForm  {
@@ -60,14 +64,7 @@ a {
 
         } 
 }
-
-.container-fluid {
-    width: 100%;
-    padding-right: 15px;
-    padding-left: 15px;
-    margin-right: auto;
-    margin-left: auto; 
-}
+/*------------------------end media query---------------------------*/
 
 .login-wrap {
     position: relative;
@@ -136,6 +133,7 @@ a {
     background-color: #007bff !important;
     color: white;
 }
+/* login with google button  */
 .login-with-google {
     font-family:poppins; 
 }
