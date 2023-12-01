@@ -61,7 +61,7 @@
             <main id="main-section">
                 <!-- **********Create post*********  -->
                 {% if user == school_profile.user %}
-                <div id="share-box" class="share-box">
+                <div id="post-box" class="post-box">
                     <div id="button-box" style="border-radius:10px;">
 
                         <button id="btn-post" style="border-radius:10px;">
@@ -179,7 +179,7 @@
                               </div>
                           </div>
                           <div  class="text-center">
-                            <button type="button" class="btn donate btn-outline-primary mb-3" onclick="window.location.href='{% url 'checkout' post.id %}'"
+                            <button type="button" class="btn donate btn-outline-primary mb-5" onclick="window.location.href='{% url 'checkout' post.id %}'"
                             {% if post.donate_amount <= post.current_amount %}disabled{% endif %} >
                             {% if post.donate_amount <= post.current_amount %}Completed{% else %}Donate{% endif %}
                         </button>
@@ -187,14 +187,6 @@
                           
                         </div>
 
-                    </div>
-                    <div id="post-interactions">
-                        <div id="interactions-btns">
-                            <button>
-                                <span class="far fa-comment-dots fa-flip-horizontal" aria-hidden="true"></span>
-                                <span>Comment</span>
-                            </button>
-                        </div>
                     </div>
                 </article>
                 {% endif %}
@@ -206,7 +198,7 @@
         </div>
         <!--------------- right side column ------------------>
         <aside id="right-aside" style="border-radius: 6px;">
-            <div id="rec-section">
+            <div id="dis-section">
                 <div class="right-text ">
                   
                     <h5 class="text-md-center fw-bold mb-3">School Details</h5>

@@ -1,6 +1,4 @@
 
-@import url("https://fonts.googleapis.com/css?family=Source+Sans+Pro&display=swap");
-
 html{
     height: 100%;
     width: 100%;
@@ -13,31 +11,6 @@ body{
     width: fit-content;
     max-height: fit-content;
 }
-
-/* @media (max-width: 985px)  {
-    .dropdown-toggle::after {
-      content: "";
-      margin: 0;
-      border-top: .3em solid;
-      border-right: .3em solid transparent;
-      border-bottom: 0;
-      border-left: .3em solid transparent;
-    }
-    .img{
-        width: 50px;    
-    }
-    .navbar-nav .dropdown-menu {
-        background-color: rgb(36, 36, 36);
-        position:static;
-        margin-right: -100px;
-        width: 150px;
-        
-    }
-} */
-
-/*------------ end dropdown ------------------------------------------------*/
-
-
 
   /*************************************************************************
     MAIN CONTAINER
@@ -58,7 +31,7 @@ div.container {
 }
 
 /**************************************************************************
-    main container > LEFT ASIDE
+     LEFT column
 **************************************************************************/
 
 .container > div#left-aside-wrapper {
@@ -85,7 +58,7 @@ div.container {
 }
 
 /**************************************************************************
-    main container > left aside > PROFILE CARD
+              left  column   profile image
 **************************************************************************/
 
 aside#left-aside div#profile-card {
@@ -150,7 +123,7 @@ aside#left-aside div#profile-card > a:hover {
 }
 /* profile */
 /**************************************************************************
-    main container > left aside > PROFILE GROUPS
+                 post1,post2,post3...  box
 **************************************************************************/
 
 
@@ -205,9 +178,9 @@ aside#left-aside div#profile-groups section .group-list {
 }
 
 
-/**************** middle section styles**************** */
+
 /**************************************************************************
-    main container > MAIN SECTION
+                    middle section styles
 **************************************************************************/
 
 .container > div#main-wrapper {
@@ -224,11 +197,7 @@ div.container main#main-section {
     width: 560px;
 }
 
-/**************************************************************************
-    main container > main section > SHARE BOX & FEED SORT
-**************************************************************************/
-
-/* modal styles */
+/* ------------modal styles--------------------*/
 
 .modal-content{
     height: 600px;
@@ -246,7 +215,7 @@ div.container main#main-section {
     width:49%;
 }
   
-main#main-section div#share-box {
+main#main-section div#post-box {
     background: #fff;
     box-shadow: 0 0 0 1px rgba(0, 0, 0, 0.15), 0 2px 3px rgba(0, 0, 0, 0.2);
     border-radius: 10px;
@@ -260,17 +229,17 @@ main#main-section div#share-box {
 }
 
 
-main#main-section div#share-box div#button-box {
+main#main-section div#post-box div#button-box {
     display: flex;
     border-bottom: 1px solid rgba(0, 0, 0, 0.15);
   
 }
 
-main#main-section div#share-box div#button-box .fas {
+main#main-section div#post-box div#button-box .fas {
     font-size: 18px;
 }
 
-main#main-section div#share-box div#button-box button {
+main#main-section div#post-box div#button-box button {
     background: #fff;
     border: 0;
     color: #696c6f;
@@ -279,44 +248,43 @@ main#main-section div#share-box div#button-box button {
     cursor: pointer;
 }
 
-main#main-section div#share-box div#button-box button#btn-post {
+main#main-section div#post-box div#button-box button#btn-post {
     width: 100%;
     text-align: left;
     padding: 26px 17px;
 }
 
-main#main-section div#share-box div#button-box button#btn-post:hover {
+main#main-section div#post-box div#button-box button#btn-post:hover {
     color: #0073b1;
 }
 
 main#main-section
-    div#share-box
+    div#post-box
     div#button-box
     button#btn-post:hover
     span#btn-text {
     text-decoration: underline;
 }
 
-main#main-section div#share-box div#button-box button#btn-post span#btn-text {
+main#main-section div#post-box div#button-box button#btn-post span#btn-text {
     font-size: 16px;
     font-weight: bold;
     padding-left: 6px;
 }
 
-main#main-section div#share-box div#button-box button#btn-document {
+main#main-section div#post-box div#button-box button#btn-document {
     border-right: 0;
     padding: 26px 30px;
 }
 
-main#main-section div#share-box div#button-box button#btn-picture:hover,
-main#main-section div#share-box div#button-box button#btn-video:hover,
-main#main-section div#share-box div#button-box button#btn-document:hover {
+main#main-section div#post-box div#button-box button#btn-picture:hover,
+main#main-section div#post-box div#button-box button#btn-document:hover {
     background: #f3f6f8;
 }
 
 
 /**************************************************************************
-    main container > main section > FEED POSTS
+                        post data school name,date
 **************************************************************************/
 
 main#main-section article {
@@ -422,6 +390,15 @@ main#main-section article div#post-data p a {
     padding-right: 5px;
     border-top: 1px solid #e6e9ec
 }
+       /* post image */
+main#main-section article div#post-data img {
+    width: 100%;
+    cursor: pointer;
+    border-bottom: 1px solid #e6e9ec;
+    border-top: 1px solid #e6e9ec;
+    padding: 5px;
+    
+}
 
 /*------------progress bar--------------*/
 .progressbar{
@@ -436,119 +413,10 @@ main#main-section article div#post-data p a {
     text-align: center !important;
 }
 
-/*------------progress bar--------------*/
+/*------------end progress bar--------------*/
 
-main#main-section article div#post-data img {
-    width: 100%;
-    cursor: pointer;
-    border-bottom: 1px solid #e6e9ec;
-    border-top: 1px solid #e6e9ec;
-    padding: 5px;
-    
-}
+/*------------------end post data---------------------------------------*/
 
-
-    div#post-interactions
-    span.fas {
-    font-size: 8px;
-    padding: 3px;
-    margin-right: 3px;
-    border-radius: 50%;
-    color: #f3f6f8;
-    text-shadow: -1px -1px 0 rgba(0, 0, 0, 0.3), 1px -1px 0 rgba(0, 0, 0, 0.3),
-        -1px 1px 0 rgba(0, 0, 0, 0.3), 1px 1px 0 rgba(0, 0, 0, 0.3);
-    cursor: pointer;
-}
-
-
-    div#post-interactions
-    span#amount-info {
-    font-size: 14px;
-    color: rgba(0, 0, 0, 0.6);
-    margin-left: 3px;
-    cursor: pointer;
-}
-
-main#main-section
-    article
-    div#post-interactions
-    span#amount-info
-    span {
-    font-size: 14px;
-    font-weight: bold;
-}
-
-main#main-section
-    article
-    div#post-interactions
-   
-    span#like-icon {
-    background: #0092e0;
-}
-
-main#main-section
-    article
-    div#post-interactions
-    span#heart-icon {
-    background: #f67373;
-}
-
-main#main-section article div#post-interactions div#interactions-btns {
-    margin: 4px 10px;
-    display: flex;
-}
-
-main#main-section article div#post-interactions div#interactions-btns button {
-    border: 0;
-    background: #fff;
-    color: rgba(0, 0, 0, 0.6);
-    font-weight: bold;
-    font-size: 14px;
-    padding: 2px 5px;
-    height: 30px;
-    margin-right: 5px;
-    cursor: pointer;
-
-    display: flex;
-    align-items: center;
-}
-
-main#main-section
-    article
-    div#post-interactions
-    div#interactions-btns
-    button:hover {
-    background: #f1f1f1;
-    color: rgba(0, 0, 0, 0.8);
-}
-
-main#main-section
-    article
-    div#post-interactions
-    div#interactions-btns
-    button
-    span.far {
-    font-size: 20px;
-    margin-right: 5px;
-}
-
-main#main-section
-    article
-    div#post-interactions
-    div#interactions-btns
-    button
-    span.fa-thumbs-up {
-    margin-bottom: 4px;
-}
-
-main#main-section
-    article
-    div#post-interactions
-    div#interactions-btns
-    button
-    span.fa-share-square {
-    font-size: 18px;
-}
 
 /* --------------------right side----------------- */
 
@@ -572,14 +440,14 @@ div.container aside#right-aside {
 }
 
 /**************************************************************************
-    main container > right aside > RECOMMENDATIONS SECTION
+      right side column discription school Details
 **************************************************************************/
 
 
-aside#right-aside div#rec-section {
+aside#right-aside div#dis-section {
     height: fit-content;
     padding: 16px 0;
-   
+  
 }
 
 
@@ -686,10 +554,10 @@ div.container main#main-section {
         margin-left: 40px;
      
     }
-    counter-increment  div#share-box div#button-box button {
+    counter-increment  div#post-box div#button-box button {
         display: none;
     }
-    main#main-section div#share-box div#button-box button#btn-post {
+    main#main-section div#post-box div#button-box button#btn-post {
         display: block;
         padding: 20px 17px;
         border-right: 0;
