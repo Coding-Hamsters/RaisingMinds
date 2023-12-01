@@ -5,96 +5,6 @@ html {
   scroll-behavior: smooth;
 }
 
-/******************************************************************
-                                navigation bar
-*******************************************************************/
-
-
-/* logo */
-
-/* .logo { 
-    display: flex;
-    font-size: 20px;
-    font-weight: 500;
-    color: #f3f5f8;
-    letter-spacing: 2px;
-    cursor: pointer;
-    text-transform: uppercase;
-}
-
-a {
-    text-decoration: none;
-} */
-
-/*---------- dropdown--------- */
-/* .img{
-    display: flex;
-    align-items: center;
-    justify-content: flex-end;
-    width: 80px;
-    height: 100%;
-    cursor: pointer;
-    transition: color 0.3s;
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;  
-    text-align: -webkit-match-parent;
-    list-style-type: disc;  
-    text-rendering: optimizeLegibility !important;
-    -webkit-font-smoothing: antialiased !important;
-}
-.img img{
-    height: 30px;
-    width: 30px;
-    border-radius: 50%;
-    border: 1px solid #e1e9ee;
-    margin: 0;
-    padding: 0;
-    
-} */
-/* .img img:hover{
-    filter: brightness(0.8);
-}
-.padding{
-    padding-top :14px !important; ;
-    padding-bottom: 12px !important;
-   
-}
-.dropdown-menu{
-    background-color: #212529;
-    border: #212529;
-}
-.dropdown-menu li a{
-    color: #f3f5f8;
-    background-color: #212529;
-}
-
-@media (max-width: 985px)  {
-    .dropdown-toggle::after {
-      content: "";
-      margin: 0;
-      border-top: .3em solid;
-      border-right: .3em solid transparent;
-      border-bottom: 0;
-      border-left: .3em solid transparent;
-    }
-    .img{
-        width: 50px;    
-    }
-    .navbar-nav .dropdown-menu {
-        background-color: rgb(36, 36, 36);
-        position:static;
-        margin-right: -190px;
-        width: 200px;
-        
-    }
-} */
-
-/*------------ end dropdown ------------------------------------------------*/
-
-/******************************************************************
-                      end navigation bar
-*******************************************************************/
   /* form styles */
 
   .fotmStyle2{
@@ -112,10 +22,8 @@ a {
    -ms-border-radius: 10px;
    -o-border-radius: 10px;
 }
-/* schoolProfilePictureFile */
-.form-control-file2{
-  margin-left: 4px;
-}
+
+
 
 /*********************************************************
                       media query
@@ -124,12 +32,12 @@ a {
 @media(max-width: 13478.9px){
   .formStyle{
     font-size: 15px;
-    width: 100%;
-    margin-left:0px;
+    width: 105%;
+    margin-left:0%;
     }
     
     .fotmStyle2 .text-center{
-  font-size: 25px;
+       font-size: 25px;
     }
     .form-control{
       font-size: 15px;
@@ -137,9 +45,7 @@ a {
     .btnLast{
       font-size: 15px;
     }
-    .form-control-file2{
-      margin-left: 5px;
-    }
+    
     
 } 
 
@@ -149,7 +55,10 @@ a {
     width: 100%;
     margin-left:0px;
     }
-    
+    .form-select{
+      font-size:12px ;
+    }
+
     .fotmStyle2 .text-center{
   font-size: 20px;
     }
@@ -165,8 +74,22 @@ a {
 @media(max-width: 904px){
   .formStyle{
     font-size: 12px;
-    width: 100%;
-    margin-left:0px;
+    width: 110%;
+    margin-left:-5%;
+    }
+    .fotmStyle2 .text-center{
+  font-size: 20px;
+    }
+    .form-control{
+      font-size: 10px;
+    }
+}
+
+@media(max-width: 767.9px){
+  .formStyle{
+    font-size: 12px;
+    width: 50%;
+    margin-left:23%;
     }
     .fotmStyle2 .text-center{
   font-size: 20px;
@@ -187,21 +110,16 @@ a {
 @media(max-width: 540.9px){
  
   .fotmStyle2{
-    width: 100%;
-    margin-left: -0%;
+    width: 180%;
+    margin-left: -35%;
   }
  
 }
-@media(max-width: 505.9px){
- 
-  
-}
-
-  @media(max-width: 391px){
+  @media(max-width: 391.9px){
     .formStyle{
       font-size: 12px;
-      width: 100%;
-      margin-left:0px;
+      width: 70%;
+      margin-left:13%;
       }
     
       .fotmStyle2 .text-center{
@@ -215,8 +133,8 @@ a {
   @media(max-width: 375.9px){
     .formStyle{
       font-size: 12px;
-      width: 100%;
-      margin-left:0px;
+      width: 60%;
+      margin-left:15%;
       }
     
       .fotmStyle2 .text-center{

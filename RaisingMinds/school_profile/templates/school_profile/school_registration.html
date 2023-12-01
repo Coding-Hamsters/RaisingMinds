@@ -84,9 +84,9 @@
   <!--------------------------END nav bar-------------------------------------->
 
 {% block content %}
-  <!-- form -->
+ 
   <br><br><br><br>
-
+ <!----------------------------------form-------------------------------------->
   <div class="row justify-content-center formStyle">
     <div class="col-md-5 ">
       <form class="container needs-validation" method="post" enctype="multipart/form-data" novalidate>
@@ -159,13 +159,19 @@
 
             <div class="form-group mb-2 col">
               <label for="File1"> Verification document :</label>
+               <!--  link with  modal -->
+            <button type="button" id="btn-agreement" data-bs-toggle="modal" data-bs-target="#exampleModal"
+            name="btn-agreement">
+            <span class="material-symbols">View requirements</span>
+          </button>
+
               <input type="file" class="form-control-file" id="File1" accept="application/pdf"name="verificationDoc"required>
               <div class="invalid-feedback">
                 please add school Verification documnet.
               </div>
             </div>
             <div class="form-group mb-3 col imageP">
-              <label for="image">School profile picture : </label>
+              <label for="image">School profile picture : </label><br>
               <input type="File" class="form-control-file2" id="image" accept="image/jpeg,image/png,image/jpg," name="schoolProfileImage" required>
               <div class="invalid-feedback">
                 please add school profile image.
@@ -248,11 +254,6 @@
           <div class="form-check mb-4">
             <input type="checkbox" class="form-check-input" id="ageement" required>
             <label class="form-check-label" for="ageement">I accept all the terms and conditions.</label>
-            <!--  link with  modal -->
-            <button type="button" id="btn-agreement" data-bs-toggle="modal" data-bs-target="#exampleModal"
-              name="btn-agreement">
-              <span class="material-symbols">View</span>
-            </button>
           </div>
 
           <div class="row">
