@@ -233,10 +233,10 @@
 
             <div class="row">
 
-              {% for post in posts|slice:":3"%}
+              {% for post in posts %}
               
                 {% if post.is_approved %}
-                {% if post.donate_amount >= post.current_amount %}
+                {% if post.donate_amount > post.current_amount %}
               <div class="col-lg-4 col-md-6 d-flex align-items-stretch">
                 <div class="icon-box">
                   <div class="project-image">
