@@ -4,6 +4,7 @@ body{
     background-color: #f3f5f8;
 }
 
+/*---------------navigation bar----------------*/
 .logo {
     display: flex;
     font-size: 20px;
@@ -17,8 +18,9 @@ body{
 a {
     text-decoration: none;
 }
+/*--------------- end navigation bar--------------*/
 
-.ftco-section {
+.main-section {
     padding: 2.5em 0; 
 }
 
@@ -28,7 +30,10 @@ a {
     padding-left: 15px;
     margin-right: auto;
     margin-left: auto; }
-    
+
+ /***************************************************************
+                         media Query
+ ****************************************************************/
     @media (min-width: 576px) {
         .signupForm 
       {max-width: 540px;
@@ -50,13 +55,6 @@ a {
             margin-left: 80px;
            
         } 
-}
-.container-fluid {
-    width: 100%;
-    padding-right: 15px;
-    padding-left: 15px;
-    margin-right: auto;
-    margin-left: auto; 
 }
 
 .login-wrap {
@@ -132,5 +130,3 @@ a {
 button i {
     margin-right: 30px; 
 }
-
-/*footer*/
