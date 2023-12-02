@@ -13,14 +13,17 @@ html {
   }
   #btn-agreement{
     border:1px solid white;
-    background-color: #0d6efd;
+    background-color: #ffffff;
     text-align: justify;
-    color:#fff ;
+    color:#0d6efd;
    border-radius: 10px;
    -webkit-border-radius: 10px;
    -moz-border-radius: 10px;
    -ms-border-radius: 10px;
    -o-border-radius: 10px;
+}
+#btn-agreement:hover,.Vdoc a:hover{
+color:#4e71a5;
 }
 
 
@@ -44,9 +47,10 @@ html {
     }
     .btnLast{
       font-size: 15px;
+    }  
+    .Vdoc a  {
+      display: block;
     }
-    
-    
 } 
 
 @media(max-width: 1025.9px){
@@ -97,6 +101,9 @@ html {
     .form-control{
       font-size: 10px;
     }
+    #btn-agreement .hidden{
+      display: none;   
+}
 }
 
 @media(max-width: 880.9px){
@@ -143,8 +150,13 @@ html {
       .form-control{
         font-size: 10px;
       }
-     
+      #btn-agreement .hidden{
+        display: none;   
   }
+  #btn-agreement{
+    padding: 0;
+  }
+}
   @media(max-width: 280.9px){
     .formStyle{
       font-size: 9px;

@@ -157,13 +157,14 @@
           </div>
           <div class="row">
 
-            <div class="form-group mb-2 col">
-              <label for="File1"> Verification document :</label>
+            <div class="form-group mb-2 col Vdoc">
+              <label for="File1"> Verification document : <a href="{% static 'school_profile/css/school_registration_form.css' %}" download>Download template</a></label>
+
                <!--  link with  modal -->
-            <button type="button" id="btn-agreement" data-bs-toggle="modal" data-bs-target="#exampleModal"
+             <button type="button" id="btn-agreement" data-bs-toggle="modal" data-bs-target="#exampleModal"
             name="btn-agreement">
-            <span class="material-symbols">View requirements</span>
-          </button>
+            <span class="material-symbols"><span class="hidden"> | &nbsp &nbsp</span> Terms and Conditions</span>
+          </button> 
 
               <input type="file" class="form-control-file" id="File1" accept="application/pdf"name="verificationDoc"required>
               <div class="invalid-feedback">
