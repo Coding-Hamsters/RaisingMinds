@@ -22,7 +22,7 @@ Our platform aims to connect compassionate individuals and deserving schools wor
   </ol>
 </details>
 
-# Built-with
+## Built-with
 
 #### These are the frameworks/libraries used in our project.
 
@@ -35,7 +35,7 @@ Our platform aims to connect compassionate individuals and deserving schools wor
 
 
 <!-- Features -->
-# Features
+## Features
 
 * A user-friendly interface allows donors to easily navigate and make donations.
 * Schools can create school posts and access requests to administrators to approve posts.
@@ -44,14 +44,14 @@ Our platform aims to connect compassionate individuals and deserving schools wor
 * Admin panel to manage school profiles, user profiles, donations, and view posts
 * responsive design for a seamless user experience on various devices.
 
-# Prerequisites
+## Prerequisites
 
 Make sure you have the following software installed before setting up the project:
 Python (https://www.python.org/)
 Django (https://www.djangoproject.com/)
 Web browser (Chrome, Firefox, Safari, etc.)
 
-# Installation
+## Installation
 
 1. Clone the repository to your local machine:
    ```sh
@@ -89,7 +89,7 @@ Web browser (Chrome, Firefox, Safari, etc.)
 
 <!-- CONTRIBUTING -->
 
-# Contributing
+## Contributing
 
 Contributions are welcome! If you find any issues or have suggestions for improvements, please create a new issue or submit a request.
 
@@ -97,12 +97,12 @@ If you have a suggestion that would make this better, please fork the repo and c
 Don't forget to give the project a star! Thanks again!
 
 <!-- LICENSE -->
-# License
+## License
 
 Distributed under the MIT License See `LICENSE.txt` for more information.
 
 <!-- CONTACT -->
-# Contact
+## Contact
 Raising Minds: raisingmindsfoundation@gmail.com
 
 Project Link: [https://github.com/Coding-Hamsters/RaisingMinds]
