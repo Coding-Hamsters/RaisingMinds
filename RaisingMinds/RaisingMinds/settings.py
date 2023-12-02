@@ -92,6 +92,26 @@ DATABASES = {
     }
 }
 
+DATABASES = {
+
+    'default': {
+
+        'ENGINE': 'django.db.backends.postgresql_psycopg2',
+
+        'NAME': 'RaisingMinds',
+
+        'USER': 'postgres',
+
+        'PASSWORD': 'your postgres password',
+
+        'HOST': 'localhost',
+
+        'PORT': '5432',
+
+    }
+
+}
+
 
 # Password validation
 # https://docs.djangoproject.com/en/4.2/ref/settings/#auth-password-validators
