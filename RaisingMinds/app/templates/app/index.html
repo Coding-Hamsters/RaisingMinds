@@ -1,0 +1,574 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Raising Minds{% block title%}{% endblock %}</title>
+
+        <!-- Bootstrap CDN -->
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" />
+
+        <!-- Font Awesome -->
+        <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" rel="stylesheet" />
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" />
+
+        <!-- Favicons -->
+        <link href="{% static 'app/images/RM-Icon.ico' %}" rel="icon">
+
+        <!-- CSS -->
+        {% block CSS %}
+        <link rel="stylesheet" type="text/css" href="{% static 'app/css/index.css' %}"/>cd
+        {% endblock %}
+
+        
+    </head>
+    <body>
+    <!-- Navigation bar -->
+        <nav class="navbar navbar-expand-lg navbar-dark bg-dark px-0  ">
+        <div class="container padding">
+            <!-- Logo -->
+            <div class="fixedLogo">
+            <a href="#"><div class="logo" class="h-8 size bg-dark">Raising Minds</div></a>
+            </div>
+            <!-- Navbar toggle -->
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse"
+            aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+            </button>
+            <!-- Collapse -->
+            <div class="collapse navbar-collapse backGround" id="navbarCollapse">
+            <!-- Nav -->
+            <div class="navbar-nav mx-lg-auto">
+                <a class="nav-item nav-link {% if navbar == 'index' %}active {% endif %}" href="{% url 'index' %}" aria-current="page">Home</a>
+                <a class="nav-item nav-link" href="{% url 'index' %}#about">About</a>
+                <a class="nav-item nav-link {% if navbar == 'projects' %} active {% endif %}" href="{% url 'projects' %}">Projects</a>
+                <a class="nav-item nav-link" href="{% url 'index' %}#team">Team</a>
+                <a class="nav-item nav-link" href="{% url 'index' %}#contact">Contact</a>
+                <a class="nav-item nav-link" href="{% url 'index' %}#qna">Q&A</a>
+                {% if user.is_authenticated %}
+                <a class="nav-item nav-link {% if navbar == 'community' %} active {% endif %}" href="{% url 'community' %}">Community</a>
+                {% else %}
+                {% endif %}
+                {% if user.is_authenticated %}
+                         <!-- dropdown user profile -->
+                         <div id="dropdown" class="img ">
+                          <ul class="navbar-nav mb-2 mb-lg-0 "> 
+                              <li class="nav-item dropdown">
+                                <a class="nav-link dropdown-toggle" href="{% url 'home' %}" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                  <img src="{{profile.profile_image.url}}" alt="">
+                                </a>
+                                <ul class="dropdown-menu">
+                                  <li><a class="dropdown-item" href="{% url 'userprofile' %}"><i class="fas fa-sliders-h fa-fw"></i> View Profile</a></li>
+                                  <li><hr class="dropdown-divider"></li>
+                                  {% if user.schoolprofile %}
+                                    {% if user.schoolprofile.is_verified %}
+                                    <li><a class="dropdown-item" href="{% url 'schoolprofile' school_profile.pk %}"><i class="fas fa-cog fa-fw"></i> School Profile</a></li>
+                                    {% else %}
+                                    <li><a class="dropdown-item" href="{% url 'index'%}"><i class="fas fa-cog fa-fw"></i> Pending School Profile</a></li>
+                                    {% endif %}
+                                  {% else %}
+                                  <li><a class="dropdown-item" href="{% url 'schoolprofilecreate' %}"><i class="fas fa-cog fa-fw"></i> Create School Profile</a></li>
+                                  {% endif %}
+                                  <li><hr class="dropdown-divider"></li>
+                                  {% if user.is_superuser %}
+                                  <li><a class="dropdown-item" href="{% url 'admin:index' %}"><i class="fas fa-user-lock fa-fw"></i> Admin Pannel</a></li>
+                                  <li><hr class="dropdown-divider"></li>
+                                  
+                                  {% else %}
+                                  {% endif %}
+                                  <li><a class="dropdown-item" href="{% url 'logout' %}"><i class="fas fa-sign-out-alt fa-fw"></i> Log Out</a></li>
+                                </ul>
+                              </li>
+                           </ul>
+                        </div>  
+                        <!--end dropdown user profile -->
+                {% else %}
+                {% endif %}
+            </div>
+            </div>
+            </div>
+        </nav>
+        <!-- End of Navigation bar -->
+
+        {% block content %}
+
+        <!-- Hero Section -->
+        <section id="hero" class="d-flex align-items-center">
+            <div class="container">
+                <h1>Welcome to <span>Raising Minds </span></h1>
+                <h2>Join us in building a brighter future through your generous donations.</h2>
+                {% if user.is_authenticated %}
+                  {% comment "" %}No action{% endcomment %}
+                {% else %}
+                <div class="d-flex">
+                  <a href="{% url 'signup' %}" class="btn-get-started">Sign up</a> &nbsp;&nbsp;&nbsp;
+                  <a href="{% url 'login' %}" class="btn-get-started"><span>Log in</span></a>
+                </div>
+                {% endif %}
+            </div>           
+        </section>
+        <!--End of Hero Section -->
+
+        <!-- Box Section -->
+        <section id="box" class="d-flex align-items-center">
+        <div class="container position-relative">
+          <div class="row icon-boxes">
+            <div class="col-md-6 col-lg-3 d-flex align-items-stretch mb-5 mb-lg-0">
+              <div class="icon-box">
+                <div class="icon"><i class="fa fa-gift"></i></div>
+                <h4 class="title text-center"><a href="">Donate Footware</a></h4>
+                <p class="description">We have donated more than 1,200 pairs of shoes and socks over 9 schools</p>
+              </div>
+            </div>
+    
+            <div class="col-md-6 col-lg-3 d-flex align-items-stretch mb-5 mb-lg-0">
+              <div class="icon-box">
+                <div class="icon"><i class="fa fa-file-text-o"></i></div>
+                <h4 class="title text-center"><a href="">Donate Library Books</a></h4>
+                <p class="description text-center">We have donated used books to two schools by conducting a social media campaign</p>
+              </div>
+            </div>
+    
+            <div class="col-md-6 col-lg-3 d-flex align-items-stretch mb-5 mb-lg-0">
+              <div class="icon-box">
+                <div class="icon"><i class="fas fa-desktop"></i></div>
+                <h4 class="title text-center"><a href="">Donate Computers</a></h4>
+                <p class="description text-center">We have already donated 30+ used PCs to 30+ Schools by conducting a social media campaign</p>
+              </div>
+            </div>
+    
+            <div class="col-md-6 col-lg-3 d-flex align-items-stretch mb-5 mb-lg-0">
+              <div class="icon-box">
+                <div class="icon"><i class="fa fa-handshake-o"></i></div>
+                <h4 class="title text-center"><a href="">Build Class Rooms and IT Labs</a></h4>
+                <p class="description text-center">Setting up an IT lab and extending support for class room renovations</p>
+              </div>
+            </div>
+    
+          </div>
+        </div>
+        </section><!-- End of Box Section -->
+
+        <!-- About Section -->
+        <section id="about" class="about">
+          <div class="container">
+    
+            <div class="section-title">
+              <h2>About Us</h2>
+              <p>At Raising Minds, we are dedicated to revolutionizing education, driven by a shared commitment to empower learners, foster innovation, and create a transformative impact in communities worldwide.</p>
+            </div> 
+            <div class="row content">
+              <div class="col-lg-6">
+                <div class="pt-4 pt-lg-0">
+                  Welcome to Raising Minds, where our commitment to transforming 
+                  education fuels our passion for a brighter future. Founded on 
+                  the belief that every child deserves access to quality learning, we embark on a mission to redefine educational landscapes. Our journey is marked by a dedicated team of educators, innovators, and supporters who share a common vision: to empower students and communities through knowledge.
+                </div>
+              </div>
+              <div class="col-lg-6 pt-4 pt-lg-0">
+                <p>
+                  At Raising Minds, we believe in the power of education to unlock 
+                  potential and break barriers. Guided by this principle, we 
+                  tirelessly work on diverse projects that span from enhancing 
+                  infrastructure to implementing innovative teaching methodologies.                  
+                </p>
+              </div>
+            </div>
+          </div>
+        </section><!-- End About Section -->
+    
+        <!-- Counts Section -->
+        <section id="counts" class="counts section-bg">
+          <div class="container">
+    
+            <div class="row justify-content-end">
+    
+              <div class="col-lg-3 col-md-5 col-6 d-md-flex align-items-md-stretch">
+                <div class="countbox">
+                  <h1 class="count" data-target="1254">0</h1>
+                  <p>Happy Donaters</p>
+                </div>
+              </div>
+    
+              <div class="col-lg-3 col-md-5 col-6 d-md-flex align-items-md-stretch">
+                <div class="countbox">
+                  <h1 class="count" data-target="500">0</h1>
+                  <p>Projects Completed</p>
+                </div>
+              </div>
+    
+              <div class="col-lg-3 col-md-5 col-6 d-md-flex align-items-md-stretch">
+                <div class="countbox">
+                  <h1 class="count" data-target="400">0</h1>
+                  <p>Schools Helped</p>
+                </div>
+              </div>
+    
+              <div class="col-lg-3 col-md-5 col-6 d-md-flex align-items-md-stretch">
+                <div class="countbox">
+                  <h1 class="count" data-target="1000">0</h1>
+                  <p>Toal Funds Raised</p>
+                </div>
+              </div>
+    
+            </div>
+    
+          </div>
+        </section><!-- End Counts Section -->
+
+        
+
+        <!-- Ongoing Projects Section -->
+        <section class="projects" id="ongoing"  class="projects section-bg">
+
+          
+
+          <div class="container">
+
+            <div class="section-title">
+              <h2>Ongoing Projects</h2>
+              <p>Embark on a journey with us as we forge ahead with passion and dedication in our ongoing projects, working tirelessly to bring positive change and elevate the educational landscape for future generations.</p>
+            </div>
+
+            <div class="row">
+
+              {% for post in posts %}
+              
+                {% if post.is_approved %}
+                {% if post.donate_amount > post.current_amount %}
+              <div class="col-lg-4 col-md-6 d-flex align-items-stretch">
+                <div class="icon-box">
+                  <div class="project-image">
+                    <img src="{{post.post_image.url}}">
+                  </div>
+                  <h4><a href="">{{post.author.school_name}}</a></h4>
+                  {% comment %} <p>Bogaswewa Samadhi Montessori with nearly 28 children had no place to learn.</p> {% endcomment %}
+                  <div class="progressbar">
+                    <h4>Progress</h4>
+                    <div class="progress">
+                      
+                      <div class="progress-bar" role="progressbar" style="width:{% widthratio post.current_amount post.donate_amount 100 %}%" aria-valuenow="{% widthratio post.current_amount post.donate_amount 100 %}" aria-valuemin="0" aria-valuemax="100">{% widthratio post.current_amount post.donate_amount 100 %}%</div>
+                      
+                    </div>
+                    <div class="row">
+                      <div class="col-sm-6">
+                          <p>Goal : USD {{post.donate_amount}}</p>
+                      </div>
+                      <div class="col-sm-6">
+                          <p>Current : USD {{post.current_amount}}</p>
+                      </div>
+                  </div>
+                  <button type="button" class="btn donate btn-outline-primary" 
+                    onclick="window.location.href='{% if user.is_authenticated %}{% url 'community' %}{% else %}{% url 'login' %}{% endif %}'">
+                    Donate
+                  </button>
+                </div>
+                </div>
+              </div>
+              
+                {% endif %}
+                {% endif %}
+
+              {% endfor %}
+              
+              {% comment %}
+
+              <div class="col-lg-4 col-md-6 d-flex align-items-stretch mt-4 mt-md-0">
+                <div class="icon-box">
+                  <div class="project-image">
+                    <img src="{% static "app/images/school.jpg" %}">
+                  </div>
+                  <h4><a href="">Ukwatta Maha Vidyalaya</a></h4>
+                  <p>Rebuilding the Drinking water supply and collecting funds for a Science Lab.</p>
+                  <div class="progressbar">
+                    <h4>Progress</h4>
+                    <div class="progress">
+                      <div class="progress-bar" role="progressbar" style="width: 50%;" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100">50%</div>
+                    </div>
+                    <div class="row">
+                      <div class="col-sm-6">
+                          <p>Goal : LKR 100,000</p>
+                      </div>
+                      <div class="col-sm-6">
+                          <p>Current : LKR 50,000</p>
+                      </div>
+                  </div>
+                  <button type="button" class="btn donate btn-outline-primary">Donate</button>
+                </div>
+                </div>
+              </div>
+
+              <div class="col-lg-4 col-md-6 d-flex align-items-stretch mt-4 mt-lg-0">
+                <div class="icon-box">
+                  <div class="project-image">
+                    <img src="{% static "app/images/school.jpg" %}">
+                  </div>
+                  <h4><a href="">Meegoda Kanishta Vidyalaya (Primary School)</a></h4>
+                  <p>Collecting funds for a Computer Lab.</p>
+                  <div class="progressbar">
+                    <h4>Progress</h4>
+                    <div class="progress">
+                      <div class="progress-bar" role="progressbar" style="width: 25%;" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100">25%</div>
+                    </div>
+                    <div class="row">
+                      <div class="col-sm-6">
+                          <p>Goal : LKR 100000</p>
+                      </div>
+                      <div class="col-sm-6">
+                          <p>Current : LKR 25,000</p>
+                      </div>
+                  </div>
+                  <button type="button" class="btn donate btn-outline-primary">Donate</button>
+                </div>
+                </div>
+              </div>
+            </div>
+
+          {% endcomment %}
+
+          </div>
+        </section>
+        <!-- End Ongoing Projects Section -->
+
+        <!-- Team Section -->
+      <section id="team" class="team section-bg">
+        <div class="container">
+
+          <div class="section-title">
+            <h2>Team</h2>
+            <p>At the heart of Rasing Minds, our diverse and passionate team brings together a wealth of expertise, united by a shared vision to make a meaningful impact in education and inspire positive change.</p>
+          </div>
+
+          <div class="row">
+
+            <div class="col-lg-3 col-md-6 d-flex align-items-stretch">
+              <div class="member">
+                <div class="member-img">
+                  <img src="{% static "app/images/profile-pic (1).png" %}" class="img-fluid" alt="">
+                </div>
+                <div class="member-info">
+                  <h4>Dulitha Harasara</h4>
+                </div>
+              </div>
+            </div>
+
+            <div class="col-lg-3 col-md-6 d-flex align-items-stretch">
+              <div class="member">
+                <div class="member-img">
+                  <img src="{% static "app/images/profile-pic (2).png" %}" class="img-fluid" alt="">
+                </div>
+                <div class="member-info">
+                  <h4>Malmi Ameesha</h4>
+                </div>
+              </div>
+            </div>
+
+            <div class="col-lg-3 col-md-6 d-flex align-items-stretch">
+              <div class="member">
+                <div class="member-img">
+                  <img src="{% static "app/images/profile-pic.png" %}" class="img-fluid" alt="">
+                </div>
+                <div class="member-info">
+                  <h4>Kavindu Shavinda</h4>
+                </div>
+              </div>
+            </div>
+
+            <div class="col-lg-3 col-md-6 d-flex align-items-stretch">
+              <div class="member">
+                <div class="member-img">
+                  <img src="{% static "app/images/profile-pic (3).png" %}" class="img-fluid" alt="">
+                </div>
+                <div class="member-info">
+                  <h4>Heshitha Sandeepa</h4>
+                </div>
+              </div>
+            </div>
+
+          </div>
+
+        </div>
+      </section><!-- End Team Section -->
+
+        <!-- Contact Section -->
+        <section id="contact" class="contact">
+          <div class="container">
+
+            <div class="section-title">
+              <h2>Contact</h2>
+              <p>Get in touch with us to explore collaboration opportunities, share your thoughts, or inquire about how you can join our mission in reshaping the future of education.</p>
+            </div>
+            <div class="row mt-5">
+              <div class="col-lg-4">
+                <div class="info">
+                  <div class="address">
+                    <i class="fa fa-map-marker"></i>
+                    <h4>Location:</h4>
+                    <p>Matara, Sri Lanka</p>
+                  </div>
+
+                  <div class="email">
+                    <i class="fa fa-envelope"></i>
+                    <h4>Email:</h4>
+                    <p>raisingmindsfoundation@gmail.com</p>
+                  </div>
+
+                  <div class="phone">
+                    <i class="fa fa-phone"></i>
+                    <h4>Call:</h4>
+                    <p>+9478 273 9316</p>
+                  </div>
+
+                </div>
+
+              </div>
+
+              <div class="col-lg-8 mt-5 mt-lg-0">
+
+                <form action="" method="post" role="form" class="email-form" >
+                  {% csrf_token %}
+                  <div class="row gy-2 gx-md-3">
+                    <div class="col-md-6 form-group">
+                      <input type="text" name="name" class="form-control" id="name" placeholder="Your Name" required>
+                    </div>
+                    <div class="col-md-6 form-group">
+                      <input type="email" class="form-control" name="email" id="email" placeholder="Your Email" required>
+                    </div>
+                    <div class="form-group col-12">
+                      <input type="text" class="form-control" name="subject" id="subject" placeholder="Subject" required>
+                    </div>
+                    <div class="form-group col-12">
+                      <textarea class="form-control" name="message" rows="5" placeholder="Message" required></textarea>
+                    </div>
+                    <div class="text-center col-12"><button class="btn btn-primary" type="submit">Send Message</button></div>
+                    
+                  </div>
+                </form>
+
+              </div>
+
+            </div>
+
+          </div>
+        </section><!-- End Contact Section -->
+
+        <!-- Q & A Section -->
+        <section id="qna" class="section-bg">
+          <div class="container">
+            <div class="section-title">
+              <h2>Q & A</h2>
+              <p>Explore our Q&A section for insights into our mission, projects, and how you can be a part of the transformative journey toward a brighter future in education.</p>
+            </div>
+            <div style="text-align: center;">
+
+              <p>
+                <button class="btn btn-primary" type="button" data-bs-toggle="collapse" data-bs-target="#request" aria-expanded="false" aria-controls="request">
+                  How to Request Donation
+                </button>
+
+                <button class="btn btn-primary" type="button" data-bs-toggle="collapse" data-bs-target="#schoolProfile" aria-expanded="false" aria-controls="schoolProfile">
+                  Create a School Profile
+                </button>
+
+                <button class="btn btn-primary" type="button" data-bs-toggle="collapse" data-bs-target="#post" aria-expanded="false" aria-controls="post">
+                  Create a Post
+                </button>
+              </p>
+              <div class="collapse" id="request">
+                <div class="card card-body">
+                  You can request  donations for your school through our website. Click the profile icon and 
+                  navigate to "Create School Profile". you'll undergo a simple validation process to confirm 
+                  your school details. Once verified, you can proceed to create a compelling request, outlining 
+                  your school's needs and initiatives to connect with potential donors.
+                </div>
+              </div>
+
+              <div class="collapse" id="schoolProfile">
+                <div class="card card-body">
+                  Build a strong foundation for your school's fundraising journey by creating a comprehensive 
+                  School Profile. Share key details about your institution, its vision, and the specific needs you're 
+                  addressing to connect with potential donors and supporters. Click the profile icon and navigate to "Create School Profile".
+                </div>
+              </div>
+
+              <div class="collapse" id="post">
+                <div class="card card-body">
+                  After successfully creating your school profile, unleash the power of your story by crafting 
+                  compelling posts. You can enhance your narrative with photos, videos, and more. To ensure approval, 
+                  make sure to insert accurate and valid details, as each submission undergoes a meticulous validation 
+                  process to maintain the integrity of our platform.
+                </div>
+              </div>
+
+            </div>
+          </div> 
+        </section>
+        <!-- End Q & A Section -->
+
+        {% endblock %}
+
+      {% block footer %}
+
+        <!-- ======= Footer ======= -->
+        <footer id="footer">
+
+          <div class="footer-top">
+            <div class="container">
+              <div class="row">
+
+                <div class="col-lg-3 col-md-6 footer-contact">
+                  <h3>Raising Minds</h3>
+                  <p>
+                    Matara <br>
+                    Sri Lanka<br>
+                    <br>
+                    <strong>Phone:</strong> +9478 273 9316<br>
+                    <strong>Email:</strong> raisingmindsfoundation</br>
+                    @gmail.com<br>
+                  </p>
+                </div>
+
+                <div class="col-lg-2 col-md-6 footer-links">
+                  <h4>Useful Links</h4>
+                  <ul>
+                    <li><a href="#">Home</a></li>
+                    <li><a href="#">About</a></li>
+                    <li><a href="#">Projects</a></li>
+                    <li><a href="#">Team</a></li>
+                    <li><a href="#">Contact</a></li>
+                  </ul>
+                </div>
+
+                <div class="col-lg-3 col-md-6 footer-links">
+                  <h4>Others</h4>
+                  <ul>
+                    <li><a href="#">Create School Profile</a></li>
+                    <li><a href="#">Create Post</a></li>
+                    <li><a href="#">Terms of service</a></li>
+                    <li><a href="#">Privacy policy</a></li>
+                  </ul>
+                </div>
+
+                <div class="col-lg-4 col-md-6 footer-newsletter">
+                  <h4>Join Our Newsletter</h4>
+                  <p>Stay connected with our mission and be the first to know about upcoming projects, events, and opportunities to make a difference</p>
+                  <form action="" method="post">
+                    <input type="email" name="email"><input type="submit" value="Subscribe">
+                  </form>
+                </div>
+
+              </div>
+            </div>
+          </div>
+        {% endblock %}
+
+        <!-- Main JS File -->
+        <script src="{% static 'app/js/main.js' %}"></script>
+
+        <!-- bootstrap JS CDN link -->
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script> 
+      </body>
+
+    
+</html>

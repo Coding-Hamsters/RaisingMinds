@@ -1,0 +1,103 @@
+{% extends "app/index.html" %}
+{% load static %}
+{% block title %} | Community{% endblock %}
+{% block CSS %}
+    {{block.super}}
+      <link rel="stylesheet" type="text/css" href="{% static 'post/css/community.css' %}">
+    {% endblock %}
+
+        <!--------------------------END nav bar-------------------------------------->
+{% block content %}
+        <!-- post section  -->
+<section>
+        <div class="container-fluid text-center mt-5">
+            <div class="row ">
+                <!-- left side column -->
+              <div class="col   colmuns " >
+               
+              </div>
+              <!-- middle column -->
+
+              <div class="col-6 mt-5 " >
+                 
+                <div class="main ">
+                    <!-- start fist post -->
+
+                {% for post in posts %}
+                    {% if post.is_approved %}
+                    <!--  post-author -->
+                    <div class="post1 mb-3" style="border-radius: 2%;">
+                    
+                    <div id="post-author" >
+                        <a href="{% url 'schoolprofile' post.author.pk %}">
+                            <div>
+                                <img src="{{post.author.school_profile_img.url}}" alt="image">
+                                <div>
+                                    <div>
+                                        <button id="schoolname" class="mt-0">
+                                        
+                                        <strong id="post-author-name" class="">{{post.author.school_name}}</strong> 
+                                        
+                                            <p class="text-start"><span id="post-update-date">{{post.date_posted}}</span></p>
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                        </a>
+                        <div>
+                            <span class="fas fa-circle"></span>
+                            <span class="fas fa-circle"></span>
+                            <span class="fas fa-circle"></span>
+                        </div>
+                          
+                    </div>
+                    <!-- end  post-author -->
+                    <div class="post-data">
+                       <h5 class="mt-1 mb-2" style="padding-left:5px ; padding-right:5px ;">{{post.title}}</h5>
+                       <div style="padding:5px">
+                        <img src="{{post.post_image.url}}" alt="image"  width="100%">
+                       </div>
+                      
+                       
+                        <p class="mt-2 text-start p-2 ">{{post.content}}</p>
+                        <div class="progressbar p-2">
+                            <h4>Progress</h4>
+                            <div class="progress">
+                              <div class="progress-bar" role="progressbar" style="width: {% widthratio post.current_amount post.donate_amount 100 %}%;" aria-valuenow="{% widthratio post.current_amount post.donate_amount 100 %}" aria-valuemin="0" aria-valuemax="100">{% widthratio post.current_amount post.donate_amount 100 %}%</div>
+                            </div>
+                            <div class="row">
+                              <div class="col-sm-6 mt-1">
+                                  <p>Goal : USD {{post.donate_amount}}</p>
+                              </div>
+                              <div class="col-sm-6 mt-1">
+                                  <p>Current : USD {{post.current_amount}}</p>
+                              </div>
+                          </div>
+                          <div >
+                            <button type="button" class="btn donate btn-outline-primary mb-3" onclick="window.location.href='{% url 'checkout' post.id %}'"
+                            {% if post.donate_amount <= post.current_amount %}disabled{% endif %}>
+                            {% if post.donate_amount <= post.current_amount %}Completed{% else %}Donate{% endif %}
+                            </button>
+                            
+                          </div>
+                          
+                        </div><br>
+                    </div>
+                </div>
+                {% endif %}
+            {% endfor %}
+                <!-------------------end first post-------------------------->
+             </div>
+              </div>
+              <!-----------------end middle column--------------------------->
+
+                <!-- right side column -->
+              <div class="col  colmuns ">
+            
+              </div>
+            </div>
+          </div>
+        </section>
+
+{% endblock %}
+{% block footer %}{% endblock %}

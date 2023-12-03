@@ -31,12 +31,24 @@ ALLOWED_HOSTS = []
 # Application definition
 
 INSTALLED_APPS = [
+    'jazzmin',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+
+    # install custom apps
+    'app',
+    'users',
+    'user_profile',
+    'school_profile',
+    'post',
+    'payments',
+
+    #paypal
+    'paypal.standard.ipn',
 ]
 
 MIDDLEWARE = [
@@ -73,11 +85,31 @@ WSGI_APPLICATION = 'RaisingMinds.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/4.2/ref/settings/#databases
 
+# DATABASES = {
+#     'default': {
+#         'ENGINE': 'django.db.backends.sqlite3',
+#         'NAME': BASE_DIR / 'db.sqlite3',
+#     }
+# }
+
 DATABASES = {
+
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
+
+        'ENGINE': 'django.db.backends.postgresql_psycopg2',
+
+        'NAME': 'RaisingMinds',
+
+        'USER': 'postgres',
+
+        'PASSWORD': 'your postgre password',
+
+        'HOST': 'localhost',
+
+        'PORT': '5432',
+
     }
+
 }
 
 
@@ -105,7 +137,9 @@ AUTH_PASSWORD_VALIDATORS = [
 
 LANGUAGE_CODE = 'en-us'
 
-TIME_ZONE = 'UTC'
+# TIME_ZONE = 'UTC'
+
+TIME_ZONE = 'Asia/Colombo'
 
 USE_I18N = True
 
@@ -121,3 +155,28 @@ STATIC_URL = 'static/'
 # https://docs.djangoproject.com/en/4.2/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
+# mention that what is the auth user model
+AUTH_USER_MODEL = 'users.User'
+
+# set up media settings
+MEDIA_URL = '/media/'
+MEDIA_ROOT = BASE_DIR / 'media/'
+
+# JAZZMIN_SETTINGS = {
+#      "site_title": "Library Admin",
+# }
+
+# email settings
+EMAIL_USE_TLS = True  
+EMAIL_HOST = 'smtp.gmail.com'  
+EMAIL_HOST_USER = 'raisingmindsfoundation@gmail.com'  
+EMAIL_HOST_PASSWORD = 'hslg eumv naye mmvr'  
+EMAIL_PORT = 587 
+
+# paypal settings
+PAYPAL_RECEIVER_EMAIL = 'RaisingMinds@gmail.com'
+PAYPAL_TEST = True
+
+# PAYPAL_BUY_BUTTON_IMAGE = 'https://res.cloudinary.com/the-proton-guy/image/upload/v1685882223/paypal-PhotoRoom_v9pay7.png'
+PAYPAL_BUY_BUTTON_IMAGE = 'https://res.cloudinary.com/ds2czl0am/image/upload/c_scale,w_100/v1700198930/d4aurt73ahxoifyt64hs.png'

@@ -1,0 +1,286 @@
+{% extends "app/index.html" %}
+{% load static %}
+{% comment %} <!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>form</title>
+  <!-- bootstrap CDN links -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" />
+  <link href="https://cdnjs.cloudflare.com/jax/libs/font-awesome/5.15.4/css/all.min.css" rel="stylesheet" />
+  <!-- icon links -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" />
+  <link rel="stylesheet"
+    href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" /> {% endcomment %}
+  {% block CSS %}
+  {{block.super}}
+  <link rel="stylesheet" type="text/css" href="{% static 'school_profile/css/school_registration_form.css' %}">
+  {% endblock %}
+{% comment %} </head> {% endcomment %}
+
+{% comment %} <body> {% endcomment %}
+  <!-- nav bar -->
+  {% comment %} <nav class="navbar navbar-expand-lg navbar-dark bg-dark  fixed-top padding">
+    <div class="container Inpadding ">
+      <!-- Logo -->
+      <div class="fixedLogo">
+        <a href="#">
+          <div class="logo" class="h-8 size bg-dark">Raising Minds</div>
+        </a>
+      </div>
+      <!-- Navbar toggle -->
+      <button class="navbar-toggler " type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse"
+        aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <!-- Collapse -->
+      <div class="collapse navbar-collapse backGround" id="navbarCollapse">
+        <!-- Nav -->
+        <div class="navbar-nav mx-lg-auto">
+          <a class="nav-item nav-link " href="#">Home</a>
+          <a class="nav-item nav-link " href="#">About</a>
+          <a class="nav-item nav-link " href="#">Projects</a>
+          <a class="nav-item nav-link" href="#">Team</a>
+          <a class="nav-item nav-link" href="#">Contact</a>
+          <a class="nav-item nav-link " href="#">Community</a>
+          <!-- dropdown -->
+          <div id="dropdown" class="img ">
+            <ul class="navbar-nav mb-2 mb-lg-0 ">
+              <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown"
+                  aria-expanded="false">
+                  <img src="/images/profile_icon.jpeg" alt="Profile pictre">
+                </a>
+                <ul class="dropdown-menu ">
+                  <li><a class="dropdown-item" href="#"><i class="fas fa-sliders-h fa-fw"></i> Account Settings</a></li>
+                  <li>
+                    <hr class="dropdown-divider">
+                  </li>
+                  <li><a class="dropdown-item" href="#"><i class="fas fa-cog fa-fw"></i> Create School Profile</a></li>
+                  <li>
+                    <hr class="dropdown-divider">
+                  </li>
+                  <li><a class="dropdown-item" href="#"><i class="fas fa-sign-out-alt fa-fw"></i> Log Out</a></li>
+                </ul>
+              </li>
+            </ul>
+          </div>
+
+
+        </div>
+
+        <!-- Donate button -->
+        <div class="d-flex align-items-lg-center mt-3 mt-lg-0 disabled">
+          <a href="#" class="btn btnDonate-style btn-sm btn-primary w-full w-lg-auto custom-btn">
+            Donate
+          </a>
+
+        </div>
+      </div>
+  </nav> {% endcomment %}
+  <!--------------------------END nav bar-------------------------------------->
+
+{% block content %}
+ 
+  <br><br><br><br>
+ <!----------------------------------form-------------------------------------->
+  <div class="row justify-content-center formStyle">
+    <div class="col-md-5 ">
+      <form class="container needs-validation" method="post" enctype="multipart/form-data" novalidate>
+        {% csrf_token %}
+        <div class="fotmStyle2">
+          <h2 class="text-center mb-4">School Registration Form</h2>
+          <div class="form-group mb-2">
+            <label for="schoolName" class="mb-1">School Name:</label>
+            <input type="text" class="form-control" id="schoolName" placeholder="Enter School Name" required
+              name="schoolName">
+          </div>
+
+          <div class="form-group mb-2">
+            <label for="schoolPrincipalName" class="mb-1">School Principal Name:</label>
+            <input type="text" class="form-control" id="schoolPrincipalName" placeholder="Enter Principal name "
+              required name="principalName">
+          </div>
+
+          <div class=" mb-2">
+            <div class="form-group col">
+              <label for="Email1" class="mb-1">School Email address:</label>
+              <input type="email" class="form-control" id="Email1" placeholder="Enter email" required name="schoolEmail">
+              <div class="invalid-feedback">
+                please enter valid email address.
+              </div>
+            </div>
+          </div>
+          <div class="row mb-2">
+            <div class="form-group col">
+              <label for="schoolProvince" class="mb-1">School Province :</label>
+              <input type="text" class="form-control" id="schoolProvince" placeholder="Enter school province" required
+                name="schoolProvince">
+            </div>
+            <div class="form-group col">
+              <label for="agentDesignation" class="mb-1">School District :</label>
+              <input type="text" class="form-control" id="agentDesignation" placeholder="Enter school District"
+                required name="schoolDistrict">
+            </div>
+
+          </div>
+          <div class="row">
+            <div class="form-group col">
+              <label for="phoneNumber" class="mb-1">School Phone No:</label>
+              <input type="number" class="form-control" id="password" placeholder="Enter Phone Number" required
+                name="phoneNo">
+            </div>
+
+            <div class="form-group col mb-2">
+              <label for="Select" selected class="mb-1">School Type:</label>
+              <select class="form-select" id="Select"name="schoolType" required>
+                <option selected disabled value="" >Select School Type</option>
+                <option>Mixed School</option>
+                <option>Boys School</option>
+                <option>Girls School</option>
+                <option>Pre School </option>
+              </select>
+            </div>
+          </div>
+
+          <div class="form-group mb-2">
+            <label for="Textarea1" class="mb-1">School Address:</label>
+            <textarea class="form-control" id="Textarea1" rows="3" placeholder="Enter school address here..." required
+              name="schoolAddress"></textarea>
+          </div>
+          <div class="form-group mb-3">
+            <label for="Textarea1" class="mb-1">Description(Optional):</label>
+            <textarea class="form-control" id="Textarea1" rows="3" placeholder="Enter your text here..." name="description"></textarea>
+          </div>
+          <div class="row">
+
+            <div class="form-group mb-2 col Vdoc">
+              <label for="File1"> Verification document : <a href="{% static 'school_profile/css/school_registration_form.css' %}" download>Download template</a></label>
+
+               <!--  link with  modal -->
+             <button type="button" id="btn-agreement" data-bs-toggle="modal" data-bs-target="#exampleModal"
+            name="btn-agreement">
+            <span class="material-symbols"><span class="hidden"> | &nbsp &nbsp</span> Terms and Conditions</span>
+          </button> 
+
+              <input type="file" class="form-control-file" id="File1" accept="application/pdf"name="verificationDoc"required>
+              <div class="invalid-feedback">
+                please add school Verification documnet.
+              </div>
+            </div>
+            <div class="form-group mb-3 col imageP">
+              <label for="image">School profile picture : </label><br>
+              <input type="File" class="form-control-file2" id="image" accept="image/jpeg,image/png,image/jpg," name="schoolProfileImage" required>
+              <div class="invalid-feedback">
+                please add school profile image.
+              </div>
+
+            </div>
+           
+          </div>
+
+          <!----------------------------modal------------------------------------->
+          <div class="modal fade show" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel"
+            aria-hidden="true">
+
+            <div class="modal-dialog modal-dialog-centered">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <h5 class="modal-title" id="exampleModalLabel">Terms and Conditions</h5>
+                  <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+
+                  <div style="align-items:center;display: flex;text-align: justify;">
+                    <ul>
+                     <li> Acceptance of Terms
+                        <p>By accessing or using the School Donation Web Application , you agree to comply with and be bound by the following terms and conditions. If you do not agree to these terms, please do not use the platform.</p>
+                     </li>
+                     <li> Create School Profiles
+                        <ul type="a">
+                          <li>Users must register an account to create school profiles.</li>
+                          <li>All information provided during registration and in school profiles must be accurate and complete.</li>
+                          <li>Users must provide accurate school verification documents.</li>
+                          <li>Users are responsible for maintaining the confidentiality of their account credentials.</li><br>
+                        </ul>
+                      </li>  
+                      <li> School Profiles and Postings
+                        <ul type="a">
+                          <li>Users creating school profiles must be authorized representatives of the respective educational institution.</li>
+                          <li>School profiles and postings must adhere to the laws and regulations of Sri Lanka.</li>
+                          <li>The platform reserves the right to review and remove any school profile or posting that violates these terms or is deemed inappropriate.</li><br>
+                        </ul>
+                      </li>  
+                      <li> Donation Process</li>
+                        <p>The platform does not guarantee the fulfillment of all donation requests and is not responsible for any unmet needs.</p>
+                      <li> Privacy and Data Security
+                        <ul Type="a">
+                            <li>The platform will collect, store, and process user data in accordance with its Privacy Policy.</li>
+                            <li>Users are responsible for the security of their account information and are encouraged to review the Privacy Policy.</li><br>
+                          </ul>
+                      </li>
+                      <li> Code of Conduct
+                        <ul Type="a">
+                          <li>Users agree to conduct themselves in a respectful and lawful manner when using the platform.</li>
+                          <li>Any form of illegal or unethical behavior will not be tolerated.</li><br>
+                        </ul> 
+                      </li>
+                      <li> Intellectual Property
+                          <ul Type="a">
+                          <li>Users retain ownership of the content they submit to the platform.</li>
+                          <li>The platform may use aggregated and anonymized data for statistical and analytical purposes.</li><br>
+                        </ul> 
+                      </li>
+                      <li> Modification of Terms</li>
+                       <p>The platform reserves the right to modify these terms and conditions at any time. Users will be notified of changes, and continued use of the platform constitutes acceptance of the modified terms.</p>
+                      <li> Termination</li>
+                        <p>The platform reserves the right to terminate or suspend user accounts that violate these terms or for any other reason at its discretion.</p>
+                      <li>Governing Law</li>
+                        <p>These terms and conditions are governed by the laws of Sri Lanka.</p>
+                      </ul> 
+                  </div>
+
+                </div>
+                <div class="modal-footer">
+                  <button type="button" class="btn btn-primary" data-bs-dismiss="modal" aria-label="Close">OK</button>
+
+                </div>
+              </div>
+            </div>
+          </div>
+  <!----------------------------end modal------------------------------------->
+          <div class="form-check mb-4">
+            <input type="checkbox" class="form-check-input" id="ageement" required>
+            <label class="form-check-label" for="ageement">I accept all the terms and conditions.</label>
+          </div>
+
+          <div class="row">
+            <div class="col-6">
+              <button type="submit" class="btn btn-primary col-12 btnLast">SUBMIT</button>
+            </div>
+            <div class="col-6">
+              <button type="reset" class="btn btn-primary col-12 btnLast">RESET</button>
+            </div>
+          </div>
+
+
+        </div>
+      </form>
+    </div>
+  </div>
+  <br><br>
+  <script src="{% static 'school_profile/js/school_registration.js'%}"></script>
+
+  <!-- bootstrap javascript link -->
+  {% comment %} <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+    crossorigin="anonymous"></script> {% endcomment %}
+
+{% endblock %}
+
+{% comment %} </body>
+
+</html> {% endcomment %}
