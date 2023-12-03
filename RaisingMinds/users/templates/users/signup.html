@@ -95,7 +95,7 @@
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>  
   <script>
     //if the password meets the requirements  
-    function validatePassword() {
+    {% comment %} function validatePassword() {
         var password = document.getElementsByName('password1')[0].value;
         var errorDiv = document.getElementById('passwordError');
         var passwordRegex = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{6,}$/;
@@ -107,7 +107,21 @@
             errorDiv.innerHTML = 'Password must contain at least 6 characters, including uppercase, lowercase, number and special character.';
             return false;
         }
-    }   
+    }    {% endcomment %}
+    function validatePassword() {
+        var password = document.getElementsByName('password1')[0].value;
+        var errorDiv = document.getElementById('passwordError');
+        var passwordRegex = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&]).{6,}$/;
+    
+        if (passwordRegex.test(password)) {
+            errorDiv.innerHTML = '';
+            return true;
+        } else {
+            errorDiv.innerHTML = 'Password must contain at least 6 characters, including uppercase, lowercase, number and special character.';
+            return false;
+        }
+    }
+    
     
     //if the two passwords match
     function validatePasswordMatch() {
