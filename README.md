@@ -1,5 +1,7 @@
 # Raising Minds
 * Web-based School Donation Application
+
+<a href="https://imgur.com/cE2NYzk"><img src="https://i.imgur.com/cE2NYzk.png" title="source: imgur.com" /></a>
   
 <!-- ABOUT THE PROJECT -->
 # About The Project
