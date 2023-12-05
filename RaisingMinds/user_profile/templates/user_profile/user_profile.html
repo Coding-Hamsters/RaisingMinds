@@ -27,10 +27,10 @@
                     <div id="photoHelp" class="form-text">Please upload images in PNG, JPG, or JPEG format.</div>
                 
             </div>
-             <!-- profile image -->
+            <!-- profile image -->
 
-             <!-- username -->
-             <div class="form-group mb-3 col-5">
+            <!-- username -->
+            <div class="form-group mb-3 col-5">
                 <label class="form-label"for="username">username</label>
                 <input type="text" class="form-control mb-1 " name="username" placeholder="{{user.username}}"id="username">
             </div>
@@ -47,41 +47,13 @@
             <button type="submit" class="btn btn-primary">Save changes </button>
             
             <button type="reset" class="btn btn-primary "> &nbspReset&nbsp </button>
-
-            <!-- delete account -->
-            <!-- <button type="button" class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#deleteAccountModal">
-                Delete Account
-              </button> -->
-               <!-- modal - delete account dialogbox -->
-              <div class="modal fade" id="deleteAccountModal" tabindex="-1" aria-labelledby="deleteAccountModalLabel" aria-hidden="true">
-                <div class="modal-dialog">
-                  <div class="modal-content">
-                    <div class="modal-header">
-                      <h5 class="modal-title" id="deleteAccountModalLabel">Delete Account</h5>
-                      <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                    </div>
-                    <div class="modal-body">
-                      Are you sure you want to delete your account? This action cannot be undone.
-                    </div>
-                    <div class="modal-footer">
-                      <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
-                      <button type="button" class="btn btn-danger">OK</button>
-                    </div>
-                  </div>
-                </div>
-              </div>
-                <!--  end modal delete account dialogbox -->
-                  <!-- end  delete account -->
+            
           </form>
-
-          <form action="{% url 'deleteuser' %}" class="p-3 align-content-center" method="post">
-          {% csrf_token %}
-            <button type="button" class="btn btn-danger">
-                Delete Account
-              </button>
-               <!-- modal - delete account dialogbox-->
-          </form>
-
-        </div>
+          <a href="#">
+            <button class="btn btn-danger ms-3 mb-3" type="button">Delete Account</button>
+          </a>
+          
+    </div>
+      
     <!-- end user settings form -->
 {% endblock %}
