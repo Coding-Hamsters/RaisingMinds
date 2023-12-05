@@ -41,7 +41,7 @@ urlpatterns = [
     path('logout/',user_views.logout,name='logout'),
     path('schoolprofile/<int:pk>/',school_profile_views.schoolprofile,name='schoolprofile'),
     path('userprofile/',user_profile_views.userProfile,name='userprofile'),
-    path('userprofile/',user_profile_views.deleteUser,name='deleteuser'),
+    path('deleteprofile/',user_profile_views.deleteUser,name='deleteprofile'),
     path('community/',post_views.community,name='community'),
 
     # payments

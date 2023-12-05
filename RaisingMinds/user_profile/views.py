@@ -1,8 +1,11 @@
 from django.shortcuts import render,redirect
 from school_profile.models import schoolProfile
 from user_profile.models import Profile
+from django.contrib import messages
+from django.contrib.auth.decorators import login_required
 
 # Create your views here.
+@login_required(login_url='login')
 def userProfile(request):
 
     user = request.user
@@ -57,15 +60,13 @@ def userProfile(request):
 
     return render(request,'user_profile/user_profile.html',{'user':user,'school_profile':school_profile,'profile':profile})
 
-def deleteUser(request,pk):
-
-    user = request.user
-
+@login_required(login_url='login')
+def deleteUser(request):
 
     if request.method == 'POST':
         user = request.user
-        print(user.username)
+        user.delete()
 
-        redirect('login')
+        return redirect('login')
 
-    return render(request,'user_profile/user_profile.html',{'user':user})
+    return render(request,'user_profile/delete_account.html')

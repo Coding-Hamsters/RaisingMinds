@@ -1,3 +1,4 @@
+{% load static %}
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -17,15 +18,16 @@
     <body>
         <div class="container mt-6">
             <form method="post" class="">
+            {% csrf_token %}
                 <h5>Delete Account</h5>
                 <hr >
                 <h6 >  Are you sure you want to delete your account? This action cannot be undone.</h6>
                 <hr class="">
                 <div class="text-center">
                     <a href="#">
-                        <button class="btn  btn-danger mb-2" type="button">Delete</button>
+                        <button class="btn  btn-danger mb-2" type="submit">Delete</button>
                     </a> 
-                    <a href="#"> 
+                    <a href="{% url 'userprofile' %}"> 
                         <button class="btn  btn-primary" type="button">cancel</button>
                     </a>
                 </div>
