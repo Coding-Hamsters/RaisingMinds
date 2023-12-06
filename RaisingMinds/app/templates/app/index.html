@@ -65,7 +65,7 @@
                                     {% if user.schoolprofile.is_verified %}
                                     <li><a class="dropdown-item" href="{% url 'schoolprofile' school_profile.pk %}"><i class="fas fa-cog fa-fw"></i> School Profile</a></li>
                                     {% else %}
-                                    <li><a class="dropdown-item" href="{% url 'index'%}"><i class="fas fa-cog fa-fw"></i> Pending School Profile</a></li>
+                                    <li><a class="dropdown-item" href="{% url 'pendingschoolprofile'%}"><i class="fas fa-cog fa-fw"></i> Pending School Profile</a></li>
                                     {% endif %}
                                   {% else %}
                                   <li><a class="dropdown-item" href="{% url 'schoolprofilecreate' %}"><i class="fas fa-cog fa-fw"></i> Create School Profile</a></li>

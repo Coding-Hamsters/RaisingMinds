@@ -128,6 +128,11 @@ def createSchoolProfile(request):
         # save new school profile
         new_school_profile.save()
 
-        return redirect('index')
+        return redirect('pendingschoolprofile')
 
     return render(request,'school_profile/school_registration.html',context)
+
+# method for render pending school profile massage
+def pendingSchoolProfile(request):
+
+    return render(request,'school_profile/pending_school_profile.html')

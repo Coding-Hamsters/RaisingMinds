@@ -52,6 +52,6 @@ urlpatterns = [
     path('schoolprofilecreate/',school_profile_views.createSchoolProfile,name='schoolprofilecreate'),
     path('emailexsist/',user_views.emailExist,name='emailexsist'),
     path('comfirmationmailsuccess/',user_views.comfimationMessage,name='comfirmationmailsuccess'),
-    
+    path('pendingschoolprofile/',school_profile_views.pendingSchoolProfile,name='pendingschoolprofile')
 
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
