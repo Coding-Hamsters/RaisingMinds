@@ -81,8 +81,8 @@ def login(request):
             return redirect('index')
         
         else:
-            # messages.error(request,'email or password is invalid!')
-            redirect('login')
+            messages.error(request,'email or password is invalid!')
+            # redirect('login')
 
     return render(request,'users/login.html')
 
