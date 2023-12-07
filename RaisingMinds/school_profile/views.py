@@ -133,6 +133,7 @@ def createSchoolProfile(request):
     return render(request,'school_profile/school_registration.html',context)
 
 # method for render pending school profile massage
+@login_required(login_url='login')
 def pendingSchoolProfile(request):
 
     return render(request,'school_profile/pending_school_profile.html')
