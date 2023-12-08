@@ -457,15 +457,27 @@ aside#right-aside div#dis-section {
 #left-aside-wrapper #left-aside{
         margin-right: -70px;
 }
-@media only screen and (max-width: 2976px) {
+@media only screen and (max-width: 12976px) {
     div.container aside#right-aside {
        margin-left:-200px;
+    }
+    .right-text{
+        display: none;
+    }
+    aside#right-aside div#dis-section {
+        display: none !important;
     }
 }
 
 @media only screen and (max-width: 1650px) {
     div.container aside#right-aside {
        margin-left:-100px;
+    }
+    .right-text{
+        display: grid !important;
+    }
+    aside#right-aside div#dis-section {
+        display: grid !important;
     }
 }
 @media (min-width: 1457px) and (max-width: 1560px) {
