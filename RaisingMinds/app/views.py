@@ -80,3 +80,6 @@ def project(request):
         # school_profile = None
 
     return render(request,'app/projects.html',{'user':user,'profile':profile,'navbar':'projects','school_profile':school_profile,'posts':post})
+
+def error404(request):
+    return render(request,'app/error404.html')

@@ -50,14 +50,6 @@
 </nav>
 <!-- End of nav bar -->
 
-{% comment %} {% if messages %}  
-{% for msg in messages %}
-<div class="alert alert-warning alert-dismissible fade show" role="alert">
-  <strong>Holy guacamole!</strong>{{msg}}
-  <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
-</div>
-{% endfor %}
-{% endif %} {% endcomment %}
     <!-- login form sction -->
   <section class="main-section mt-4">
     <div class="container loginForm">
@@ -68,6 +60,17 @@
               <span class="fa fa-user"></span>
             </div>
             <h3 class="text-center mb-4">Log In</h3>
+            
+            {% if messages %}
+            {% for message in messages %}
+            <div class="alert alert-warning alert-dismissible fade show bg-danger text-white" role="alert">
+              {{message}}
+              <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+            </div>
+            {% endfor %}
+            {% endif %}
+
+            
             <form action="#" class="login-form" method="post">
             {% csrf_token %}
               <div class="form-group">
@@ -82,6 +85,7 @@
                 </button>
               </div>
 
+             
               <div class="rember">
                 <div class="col-sm-6">
                   <div class="form-check">

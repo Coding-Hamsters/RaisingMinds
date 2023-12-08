@@ -1,0 +1,159 @@
+body{
+    font-family:poppins;
+}
+.box{
+    border: 1px solid rgb(190, 190, 190);
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.9);
+    width: 50%;
+    height: 400px;
+    align-items: center;
+    margin: auto;
+    margin-top: 160px;
+    border-radius: 3%;
+    -webkit-border-radius: 3%;
+    -moz-border-radius: 3%;
+    -ms-border-radius: 3%;
+    -o-border-radius: 3%;
+}
+
+/* heading*/
+div h2{
+    margin-top: 8%;
+}
+/* school icon */
+div i{
+    background-color:black;
+    padding: 15px;
+    font-size: 50px;
+    border-radius: 50%;
+    -webkit-border-radius: 50%;
+    -moz-border-radius: 50%;
+    -ms-border-radius: 50%;
+    -o-border-radius: 50%;
+    color:white;
+}
+ /* button styles */
+.btn-primary{
+    background-color: black !important;
+    border: greenyellow;
+    color:white;
+    font-weight: 700;
+}
+.btn-primary:hover{
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.9);
+    color: white;
+}
+/* button styles for tab press */
+.btn-primary:focus {
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.9);
+    color: white;
+}
+
+
+/*************************************************************************
+                                media Query
+**************************************************************************/
+@media(max-width: 1280.9px){
+    .box{
+        padding: 10px;
+        width: 60%;
+    }
+}
+@media(max-width: 1024.9px){
+    .box{
+        padding: 10px;
+        width: 70%;
+        margin-top: 10%;
+    }
+}
+
+@media(max-width: 912.9px){
+    .box{
+        padding: 10px;
+        width: 90%;
+        height:390px;
+    }
+    div i.mt-5{
+        margin-top: 3% !important;
+    }
+}
+
+@media(max-width: 540.9px){
+    .box{
+        padding: 10px;
+        width: 80%;
+        margin-top: 10%;
+        height:260px;
+    }
+    div h2{
+        margin-top: 4%;
+        font-size: 100%;
+    }
+    div i { 
+        font-size: 20px;
+    } 
+    div i.mt-5{
+        margin-top: 5% !important;
+    }
+    p{
+        font-size: 12px;
+    }
+    .btn-primary{
+        font-size: 65%;
+    }
+}
+
+@media(max-width: 414.9px){
+    .box{
+        margin-top: 20%;
+        padding: 10px;
+        width: 90%;
+        height:260px;
+    }
+}
+@media(max-width: 375.9px){
+    .box{
+        margin-top: 20%;
+        padding: 10px;
+        width: 90%;
+        height:240px;
+    }
+    div h2{
+        font-size: 100%;
+    }
+    div i { 
+        font-size: 25px;
+    } 
+    div i.mt-5{
+        margin-top: 5% !important;
+    }
+    p{
+        font-size: 12px;
+    }
+}
+@media(max-width: 280.9px){
+    .box{
+        margin-top: 20%;
+        padding: 10px;
+        width: 90%;
+        height:200px;
+    }
+    div h2{
+        font-size: 80%;
+    }
+    div i { 
+        font-size: 20px;
+    } 
+    div i.mt-5{
+        margin-top: -1% !important;
+    }
+    p.mt-1{
+        margin-top: -10px !important;
+        font-size: 8px;
+    }
+    .btn-primary{
+        margin-top: -10px !important;
+        font-size: 60%;
+    }
+}
+

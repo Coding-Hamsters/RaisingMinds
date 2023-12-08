@@ -41,7 +41,7 @@ urlpatterns = [
     path('logout/',user_views.logout,name='logout'),
     path('schoolprofile/<int:pk>/',school_profile_views.schoolprofile,name='schoolprofile'),
     path('userprofile/',user_profile_views.userProfile,name='userprofile'),
-    path('userprofile/',user_profile_views.deleteUser,name='deleteuser'),
+    path('deleteprofile/',user_profile_views.deleteUser,name='deleteprofile'),
     path('community/',post_views.community,name='community'),
 
     # payments
@@ -49,7 +49,9 @@ urlpatterns = [
     path('checkout/<int:post_id>/', payment_views.checkout, name='checkout'),
     path('payment-success/<int:post_id>/', payment_views.paymentSuccess, name='payment-success'),
     path('payment-failed/<int:post_id>/', payment_views.paymentFail, name='payment-failed'),
-    path('schoolprofilecreate/',school_profile_views.createSchoolProfile,name='schoolprofilecreate')
-    
+    path('schoolprofilecreate/',school_profile_views.createSchoolProfile,name='schoolprofilecreate'),
+    path('emailexsist/',user_views.emailExist,name='emailexsist'),
+    path('comfirmationmailsuccess/',user_views.comfimationMessage,name='comfirmationmailsuccess'),
+    path('pendingschoolprofile/',school_profile_views.pendingSchoolProfile,name='pendingschoolprofile')
 
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

@@ -65,7 +65,7 @@
                                     {% if user.schoolprofile.is_verified %}
                                     <li><a class="dropdown-item" href="{% url 'schoolprofile' school_profile.pk %}"><i class="fas fa-cog fa-fw"></i> School Profile</a></li>
                                     {% else %}
-                                    <li><a class="dropdown-item" href="{% url 'index'%}"><i class="fas fa-cog fa-fw"></i> Pending School Profile</a></li>
+                                    <li><a class="dropdown-item" href="{% url 'pendingschoolprofile'%}"><i class="fas fa-cog fa-fw"></i> Pending School Profile</a></li>
                                     {% endif %}
                                   {% else %}
                                   <li><a class="dropdown-item" href="{% url 'schoolprofilecreate' %}"><i class="fas fa-cog fa-fw"></i> Create School Profile</a></li>
@@ -417,7 +417,7 @@
                   <div class="phone">
                     <i class="fa fa-phone"></i>
                     <h4>Call:</h4>
-                    <p>+9478 273 9316</p>
+                    <p>+9470 428 106</p>
                   </div>
 
                 </div>
@@ -523,7 +523,7 @@
                     Matara <br>
                     Sri Lanka<br>
                     <br>
-                    <strong>Phone:</strong> +9478 273 9316<br>
+                    <strong>Phone:</strong> +9470 428 1066<br>
                     <strong>Email:</strong> raisingmindsfoundation</br>
                     @gmail.com<br>
                   </p>
@@ -532,11 +532,11 @@
                 <div class="col-lg-2 col-md-6 footer-links">
                   <h4>Useful Links</h4>
                   <ul>
-                    <li><a href="#">Home</a></li>
-                    <li><a href="#">About</a></li>
-                    <li><a href="#">Projects</a></li>
-                    <li><a href="#">Team</a></li>
-                    <li><a href="#">Contact</a></li>
+                    <li><a href="{% url 'index' %}">Home</a></li>
+                    <li><a href="{% url 'index' %}#about">About</a></li>
+                    <li><a href="{% url 'projects' %}">Projects</a></li>
+                    <li><a href="{% url 'index' %}#team">Team</a></li>
+                    <li><a href="{% url 'index' %}#contact">Contact</a></li>
                   </ul>
                 </div>
 
@@ -545,16 +545,18 @@
                   <ul>
                     <li><a href="#">Create School Profile</a></li>
                     <li><a href="#">Create Post</a></li>
-                    <li><a href="#">Terms of service</a></li>
-                    <li><a href="#">Privacy policy</a></li>
+                    <li><a href="{% url "error404" %}">Terms of service</a></li>
+                    <li><a href="{% url "error404" %}">Privacy policy</a></li>
                   </ul>
                 </div>
 
                 <div class="col-lg-4 col-md-6 footer-newsletter">
                   <h4>Join Our Newsletter</h4>
                   <p>Stay connected with our mission and be the first to know about upcoming projects, events, and opportunities to make a difference</p>
-                  <form action="" method="post">
-                    <input type="email" name="email"><input type="submit" value="Subscribe">
+                  <form>
+                    <input type="email" name="email" placeholder="email address"> 
+                    <button type="button" onclick="window.location.href=' {% url 'error404' %}'">Subscribe</button>
+            
                   </form>
                 </div>
 

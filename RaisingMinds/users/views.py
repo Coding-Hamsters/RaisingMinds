@@ -27,7 +27,7 @@ def signup(request):
         if password1 == password2:
 
             if User.objects.filter(email = email).exists():
-                return HttpResponse('<h1>Email is Already Exists</h1>')
+                return redirect('emailexsist')
             
             else:
                 # create a new user
@@ -63,7 +63,7 @@ def signup(request):
                 # send the confimation email
                 email.send()
 
-                return HttpResponse('<h1>We Send You a Confirmation Email</h1>')
+                return redirect('comfirmationmailsuccess')
 
     return render(request,'users/signup.html')
 
@@ -82,7 +82,7 @@ def login(request):
         
         else:
             messages.error(request,'email or password is invalid!')
-            redirect('login')
+            # redirect('login')
 
     return render(request,'users/login.html')
 
@@ -164,3 +164,13 @@ def ForgetPassword(request):
     except Exception as e:
         print(e)
     return render(request , 'users/forget-password.html')
+
+# method for render email exsist msg html file
+def emailExist(request):
+    return render(request,'users/already_exsist.html')
+
+# method for display email confirmation mail mail send or not msg
+def comfimationMessage(request):
+     return render(request,'users/confirmation_email_box.html')
+
+

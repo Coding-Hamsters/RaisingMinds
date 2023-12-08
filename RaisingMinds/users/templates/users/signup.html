@@ -91,27 +91,16 @@
         </div>
     </section>
     <!-- end of signup form -->
-      
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>  
-  <script>
-    //if the password meets the requirements  
-    {% comment %} function validatePassword() {
-        var password = document.getElementsByName('password1')[0].value;
-        var errorDiv = document.getElementById('passwordError');
-        var passwordRegex = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{6,}$/;
+    <!-- bootstrap javascript CDN link -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>  
     
-        if (passwordRegex.test(password)) {
-            errorDiv.innerHTML = '';
-            return true;
-        } else {
-            errorDiv.innerHTML = 'Password must contain at least 6 characters, including uppercase, lowercase, number and special character.';
-            return false;
-        }
-    }    {% endcomment %}
+    <!-- password validation -->
+    <script>
+    //if the password  not meets the requirements  
     function validatePassword() {
-        var password = document.getElementsByName('password1')[0].value;
-        var errorDiv = document.getElementById('passwordError');
-        var passwordRegex = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&]).{6,}$/;
+        let password = document.getElementsByName('password1')[0].value;
+        let errorDiv = document.getElementById('passwordError');
+        let passwordRegex = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$#!%*?&]).{6,}$/;
     
         if (passwordRegex.test(password)) {
             errorDiv.innerHTML = '';
@@ -122,12 +111,11 @@
         }
     }
     
-    
     //if the two passwords match
     function validatePasswordMatch() {
-        var password1 = document.getElementsByName('password1')[0].value;
-        var password2 = document.getElementsByName('password2')[0].value;
-        var errorDiv = document.getElementById('passwordError');
+        let password1 = document.getElementsByName('password1')[0].value;
+        let password2 = document.getElementsByName('password2')[0].value;
+        let errorDiv = document.getElementById('passwordError');
     
         if (password1 === password2) {
             errorDiv.innerHTML = '';
@@ -143,9 +131,7 @@
         if (!validatePassword() || !validatePasswordMatch()) {
             event.preventDefault();
         }
-    };
-    
-    
+    };  
 </script>
 </body>
 </html>
