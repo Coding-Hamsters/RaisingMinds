@@ -105,11 +105,11 @@ Web browser (Chrome, Firefox, Safari, etc.)
     }
    }
     ```
-9. Migrate:
+9. Make Migrations:
    ```sh
    python manage.py makemigrations
    ```
-10. Run Migrations:
+10. Migrate Database:
    ```sh
    python manage.py migrate
    ```
