@@ -1,6 +1,6 @@
 # Raising Minds
 
-### Web Application Preview:
+### Web Application Preview :
 <a href="https://imgur.com/cE2NYzk"><img src="https://i.imgur.com/cE2NYzk.png" title="source: imgur.com" /></a>
   
 <!-- ABOUT THE PROJECT -->
@@ -10,7 +10,7 @@ Funds will be used to provide essential supplies, recruit new teachers, and upgr
 
 Our platform aims to connect compassionate individuals and deserving schools worldwide. Our belief is that education has the power to break down barriers and transform lives. By joining hands with us, you can become a catalyst for change.Donations made through our website go straight towards improving Sri Lankan schools' learning environment. The raised money is used to provide necessary supplies such as textbooks, stationery, laboratory equipment, and technology resources, providing essential tools for academic success.
 
-## Link:
+## Link :
 <a href ="https://raisingminds.pythonanywhere.com/">https://raisingminds.pythonanywhere.com/</a>
 
 <!-- TABLE OF CONTENTS -->
