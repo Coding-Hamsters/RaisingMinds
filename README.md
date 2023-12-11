@@ -1,14 +1,17 @@
 # Raising Minds
-* Web-based School Donation Application
 
+### Web Application Preview :
 <a href="https://imgur.com/cE2NYzk"><img src="https://i.imgur.com/cE2NYzk.png" title="source: imgur.com" /></a>
   
 <!-- ABOUT THE PROJECT -->
-# About The Project
+## About The Project :
 The economic crisis in Sri Lanka is a serious challenge for the country's education system. It is important to take steps to mitigate the impact of the crisis on schools and to ensure that all children have access to quality education.The group is determined to make a positive impact by designing a university project tailored specifically to support schools and improve learning opportunities for Sri Lankan children.Our group project is to create a donation website for schools in Sri Lanka. The aim of this website is to enable people worldwide to support these schools by making donations. These 
 Funds will be used to provide essential supplies, recruit new teachers, and upgrade the infrastructure required for learning.
 
-Our platform aims to connect compassionate individuals and deserving schools worldwide. Our belief is that education has the power to break down barriers and transform lives. By joining hands with us, you can become a catalyst for change.Donations made through our website go straight towards improving Sri Lankan schools' learning environment. The raised money is used to provide necessary supplies such as textbooks, stationery, laboratory equipment, and technology resources, providing essential tools for academic success
+Our platform aims to connect compassionate individuals and deserving schools worldwide. Our belief is that education has the power to break down barriers and transform lives. By joining hands with us, you can become a catalyst for change.Donations made through our website go straight towards improving Sri Lankan schools' learning environment. The raised money is used to provide necessary supplies such as textbooks, stationery, laboratory equipment, and technology resources, providing essential tools for academic success.
+
+## Link :
+<a href ="https://raisingminds.pythonanywhere.com/">https://raisingminds.pythonanywhere.com/</a>
 
 <!-- TABLE OF CONTENTS -->
 <details>
@@ -55,38 +58,65 @@ Web browser (Chrome, Firefox, Safari, etc.)
 
 ## Installation
 
-1. Clone the repository to your local machine:
-   ```sh
-   https://github.com/your-username/school-donation-web-app.
-   ```
-2. Create Virtual Environment for the project:
-   ```sh
-   py -m venv virualenv(named as you like)
-   ```
-3. Install python dependencies for your project:
+1. Create Virtual Environment
     ```sh
-   pip install django
+   python -m venv venv
    ```
-4. git Change directory to the project folder:
+2. Activate Virtual Environment
+   * On Windows
+    ```sh
+   venv\Scripts\activate
+   ```
+   * On macOS/Linux
+    ```sh
+   source venv\bin\activate
+   ```
+3. Clone the repository to your local machine:
    ```sh
-   cd school-donation-web-app
+   https://github.com/Coding-Hamsters/RaisingMinds
    ```
-5. Apply database migrations:
+4. Find path of Requirement.txt file:
+    ```sh
+   RaisingMinds/RaisingMinds
+   ```
+5. Use to following command to install dependencies:
+    ```sh
+   pip install -r requirements.txt
+   ```
+6. Install PostgreSQL and Go to the pgadmin and create the database as 'RaisingMinds'
+
+7. Find the location of settings.py
+   ```sh
+   RaisingMinds/RaisingMinds/RaisingMinds/Settings.py
+   ```
+8. Update django settings:
+   In your Django project's settings('settings.py'),update the 'DATABASES' configuration to use 
+   postgreSQL.Repalce 'yourpassword'and Change the USER as 'postgres'.
+   
+   ```sh
+   DATABASES = {
+    'default': {
+        'ENGINE': 'django.db.backends.postgresql',
+        'NAME': 'RaisingMinds',
+        'USER': 'postgres',
+        'PASSWORD': 'your password',
+        'HOST': 'localhost',
+        'PORT': '5432',
+    }
+   }
+    ```
+9. Make Migrations:
+   ```sh
+   python manage.py makemigrations
+   ```
+10. Migrate Database:
    ```sh
    python manage.py migrate
    ```
-6. Apply paypal Dependencies for the project:
-   ```sh
-   pip install django-paypal
-   ```
-7. Start the Django development server:
+11. Start the Django development server:
+  * find path as RaisingMinds/RaisingMinds
    ```sh
    python manage.py runserver
-   ```
-8. Access the application in your web browser at:
-   ```sh
-    http://localhost:8000.
-   Explore the donation platform, view schools, make donations, and manage the application through the admin panel at http://localhost:8000/admin.
    ```
 
 <!-- CONTRIBUTING -->
